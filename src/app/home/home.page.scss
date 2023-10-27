@@ -1,27 +1,113 @@
-#container {
-  text-align: center;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.body {
+  --background: url('../../assets/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.logo {
+  height: 60px;
+  border-radius: 10px;
+}
+.barra{
+  --background: black;
+}
+.texto{
+  color: white;
+  margin-right: 60px;
+  height: auto;
+  width: 200px;
+}
+.usuario{
+  height: auto;
+  width: 80px;
+}
+.imagen{
+  margin-left: 70px;
+  margin-top: 80px;
+  filter: drop-shadow(0 2px 4px rgb(227, 8, 8));
+  height: auto;
+  width: 150px;
+}
+.lateral{
+  --background: rgb(221, 211, 211);
+}
+.name{
+  margin-top: 20px;
+  color: black;
+  font-size: 19px;
+  font-weight: bold;
+}
+.lista{
+  margin-top: 20px;
+  --background: rgb(221, 211, 211);
+  color: black;
+}
+ion-icon{
+  color: black;
+}
+.icono{
+  color:rgb(0, 187, 255);
+  font-size: 40px;
+}
+.custom-button {
+  width: 90px;
+  height: 90px;
+  --background: red;
+  --border-radius: 50%;
+  color: white;
+  font-size: 30px;
+  filter: drop-shadow(2px 2px 2px rgb(255, 255, 255));
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 250px;
+  right: 720px;
+  top: 540px;
+}
+.agregar {
+  --background: none;
+  width: 90px;
+  height: 90px;
+  --border-radius: 45px;
+  position: absolute;
+  bottom: 250px;
+  left: 50px;
+  top: 608px;
+}
+.mas{
+  font-size: 50px;
+  color: white;
+}
+.map-container {
+  width: 100%;
+  position: relative;
+  border-radius: 30px;
+  border: 2px solid rgb(0, 187, 255);
+  box-shadow: 2px 2px 2px rgb(0, 187, 255);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.ubicacion {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 55px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.addres {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 25px;
+  margin-top: 20px;
 }
-
-#container a {
-  text-decoration: none;
+.mapa{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+}
+.map{
+  border-radius: 30px;
 }
