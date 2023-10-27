@@ -50,6 +50,26 @@
     </ion-list>
   </ion-content>
 </ion-menu>
-<ion-content class="body">
 
-</ion-content>
+<ion-content class="body">
+  <ion-card class="custom-card">
+    <ion-card-header class="titulo">
+      Datos del Contacto
+    </ion-card-header>
+
+    <ion-card-content class="datos-container">
+      <div class="datos">Nombres:</div>
+      <div class="datos2">{{ datosRecibidos.nombre }}</div>
+    </ion-card-content>
+    <ion-card-content class="datos-container">
+      <div class="datos">Apellidos:</div>
+      <div class="datos2">{{ datosRecibidos.apellidos }}</div>
+    </ion-card-content>
+    <ion-card-content class="datos-container">
+      <div class="datos">Parentezco:</div>
+      <div class="datos2">{{ datosRecibidos.parentezco }}</div>
+    </ion-card-content>
+    <ion-card-content class="datos-container">
+      <div class="datos">Número de Celular:</div>
+      <div class="datos2">{{ datosRecibidos.numeroCelular }}</div>
+    </ion-card-content>

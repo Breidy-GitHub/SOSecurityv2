@@ -1,5 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact-detail',
@@ -7,10 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact-detail.page.scss'],
 })
 export class ContactDetailPage implements OnInit {
+  datosRecibidos: any;
 
-  constructor(private ngZone: NgZone, private router: Router) { }
+  constructor(private ngZone: NgZone, private router: Router, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      this.datosRecibidos = params;
+  });
+}
 
   ngOnInit() {
+
   }
 
   navigateTocontact() {
