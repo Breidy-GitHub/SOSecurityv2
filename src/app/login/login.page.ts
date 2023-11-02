@@ -10,9 +10,10 @@ export class LoginPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const btsignIn = document.getElementById("sign-in") as HTMLElement;
-    const btsignUp = document.getElementById("sign-up") as HTMLElement;
-    const btnRecu = document.querySelector(".btn-recu") as HTMLElement;
+    const btsignIn = document.querySelector("#sign-in") as HTMLElement; //Añadimos el botón de iniciar sesion
+    const btsignUp = document.getElementById("sign-up") as HTMLElement; //Añadimos el botón de registrarse
+    const btnRecu = document.getElementById("sign-recu") as HTMLElement; // Añadimos el botón de recuperación
+    const btnSinRecu = document.getElementById("sign-in-recu") as HTMLElement; // Añadimos el boton de regreso del componente de recuperacion
     const formRegister = document.querySelector(".register") as HTMLElement;
     const formLogin = document.querySelector(".login") as HTMLElement;
     const formRecu = document.querySelector(".recu") as HTMLElement;
@@ -35,5 +36,11 @@ export class LoginPage implements OnInit {
       formRegister.classList.add("hide");
       formRecu.classList.remove("hide");
     });
-  }
+
+    btnSinRecu.addEventListener("click", ()=>{
+      formLogin.classList.remove("hide");
+      formRegister.classList.add("hide");
+      formRecu.classList.add("hide");
+    })
+}
 }
