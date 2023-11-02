@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar class="barra">
+    <div class="header-container">
+      <img src="../../assets/logo.png" alt="Logo" class="logo" />
+      <ion-segment>
+        <ion-segment-button class="usuario" value="cuenta" (click)="abrirBarraLateral()">
+          <ion-icon  class="icono" name="person"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button class="texto" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
+        <ion-segment-button class="texto" value="servicios">Nuestros Servicios</ion-segment-button>
+        <ion-segment-button class="texto" value="acerca">Acerca de Nosotros</ion-segment-button>
+        <ion-segment-button class="texto" value="contacto">Contáctenos</ion-segment-button>
+      </ion-segment>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu side="start" contentId="main-content">
+  <ion-content class="lateral">
+    <div>
+      <ion-avatar class="imagen">
+        <img src="../../assets/icon/favicon.png" alt="Imagen de perfil" />
+      </ion-avatar>
+      <ion-title class="name">Andres Ricardo Parra Salas</ion-title>
+    </div>
+    <ion-list class="lateral">
+      <ion-item class="lista" (click)="navigateToHome()">
+        <ion-icon name="home" slot="start"></ion-icon>
+        Home
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="stats-chart" slot="start"></ion-icon>
+        Alertas Activas
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="person" slot="start"></ion-icon>
+        Usuarios
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="heart" slot="start"></ion-icon>
+        Historiales
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="settings" slot="start"></ion-icon>
+        Configuraciones
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content class="body">
+  <ion-title class="historial">Historial de SOSECURITY</ion-title>
+  <ion-searchbar [(ngModel)]="searchText" (ionChange)="onSearch($event)" class="buscar"></ion-searchbar>
+
+  <table class="tabla-seguridad">
+    <tr>
+      <td style="width: 180px">
+        <ion-icon name="shield-outline" class="icono-seguridad"></ion-icon>
+        Eventos de seguridad
+      </td>
+      <td style="width: 50px"><p class="encabezado">Fecha/Hora</p></td>
+      <td style="width: 50px"><p class="encabezado">Evento</p></td>
+      <td style="width: 50px"><p class="encabezado">Usuario</p></td>
+      <td style="width: 50px"><p class="encabezado">Detalles</p></td>
+    </tr>
+
+    <tr>
+      <td>
+        <ion-icon name="people-outline" class="icono-seguridad"></ion-icon>
+        Actividades de usuario
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>
+        <ion-icon name="alert-outline" class="icono-seguridad"></ion-icon>
+        Alertas emitidas
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>
+        <ion-icon name="cloud-outline" class="icono-seguridad"></ion-icon>
+        Respaldo y restauración de datos
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</ion-content>

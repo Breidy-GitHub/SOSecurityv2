@@ -13,6 +13,7 @@
     userLocation: any;
     map: google.maps.Map | undefined;
     userAddress: string | undefined;
+    ubicacionUsuario: google.maps.Marker | undefined;
 
     constructor(private ngZone: NgZone, private router: Router, private alertController: AlertController) {}
 
@@ -36,7 +37,26 @@
             };
             this.map = new google.maps.Map(document.getElementById('map') as HTMLElement, mapOptions);
 
+
+            this.ubicacionUsuario = new google.maps.Marker({
+              position: { lat: this.userLocation.latitude, lng: this.userLocation.longitude },
+              map: this.map,
+              title: 'Usted está aquí',
+              icon: '../../assets/marcador.png'
+            });
+
             this.convertCoordinatesToAddress();
+
+            navigator.geolocation.watchPosition((newPosition: any) => {
+              const newLocation = {
+                latitude: newPosition.coords.latitude,
+                longitude: newPosition.coords.longitude
+              };
+              this.userLocation = newLocation;
+              if (this.ubicacionUsuario) {
+                this.ubicacionUsuario.setPosition(new google.maps.LatLng(newLocation.latitude, newLocation.longitude));
+              }
+            });
           }
         }, (error: any) => {
           console.error('Error al obtener la ubicación: ', error);
