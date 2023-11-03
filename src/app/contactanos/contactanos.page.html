@@ -1,0 +1,61 @@
+<ion-header [translucent]="true" class="header-style">
+  <ion-toolbar class="ion-text-center">
+    <ion-title class="title-style">Contactanos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image">
+    <div class="container">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <ion-card>
+              <ion-card-header>Información de Contacto</ion-card-header>
+              <br>
+              <ion-card-content>
+                <p><ion-icon name="mail-outline"></ion-icon>  Correo Electrónico: ejemplo@correo.com</p>
+                <br>
+                <p><ion-icon name="call-outline"></ion-icon>   Teléfono: 23456789</p>
+                <br>
+                <p>Redes Sociales: </p>
+                <br>
+                <ion-icon name="logo-facebook" class="social-icon"></ion-icon><ion-icon name="logo-instagram" class="social-icon"></ion-icon><ion-icon name="logo-twitter" class="social-icon"></ion-icon>
+
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <ion-card>
+              <ion-card-header>Formulario de Contacto</ion-card-header>
+              <ion-card-content>
+                <ion-item>
+                  <ion-label position="stacked">Nombre</ion-label>
+                  <ion-input [(ngModel)]="contact.name" name="name" type="text" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="stacked">Correo Electrónico</ion-label>
+                  <ion-input [(ngModel)]="contact.email" name="email" type="text" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="stacked">Asunto</ion-label>
+                  <ion-input [(ngModel)]="contact.subject" name="subject" type="text" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="stacked">Mensaje</ion-label>
+                  <ion-input [(ngModel)]="contact.message" name="message" type="text" required></ion-input>
+                </ion-item>
+              </ion-card-content>
+              <button (click)="sendMessage()">Enviar</button>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <ion-alert
+    header="Éxito"
+    message="Formulario enviado exitosamente"
+    buttons="[{ text: 'Aceptar', handler: () => (enviadoExitosamente = true) }]">
+  </ion-alert>
+</ion-content>
