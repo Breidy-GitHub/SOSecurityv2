@@ -27,7 +27,7 @@ const routes: Routes = [
     path: 'contactanos',
     loadChildren: () => import('./contactanos/contactanos.module').then( m => m.ContactanosPageModule)
   },
-	}
+
   {
     path: 'contact-detail',
     loadChildren: () => import('./contact-detail/contact-detail.module').then( m => m.ContactDetailPageModule)
@@ -39,8 +39,7 @@ const routes: Routes = [
 
 
 ];
-}
-];
+
 
 @NgModule({
   imports: [
