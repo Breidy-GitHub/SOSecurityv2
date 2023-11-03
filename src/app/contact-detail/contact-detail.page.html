@@ -52,17 +52,24 @@
 </ion-menu>
 
 <ion-content class="body">
-  <div class="ubicacion">Tu ubicación actual</div>
-  <div class="addres">{{ userLocation ? userAddress : 'Obteniendo ubicación...' }}</div>
-  <div Class="mapa">
-  <div class="map-container">
-    <div id="map" class="map" style="height: calc(50vh)"></div>
-  </div>
-  </div>
-  <ion-button class="custom-button">
-    SOS
-  </ion-button>
-</ion-content>
-<ion-button class="agregar" (click)="mostrarAlerta()">
-  <ion-icon class="mas" name="person-add"></ion-icon>
-</ion-button>
+  <ion-card class="custom-card">
+    <ion-card-header class="titulo">
+      Datos del Contacto
+    </ion-card-header>
+
+    <ion-card-content class="datos-container">
+      <div class="datos">Nombres:</div>
+      <div class="datos2">{{ datosRecibidos.nombre }}</div>
+    </ion-card-content>
+    <ion-card-content class="datos-container">
+      <div class="datos">Apellidos:</div>
+      <div class="datos2">{{ datosRecibidos.apellidos }}</div>
+    </ion-card-content>
+    <ion-card-content class="datos-container">
+      <div class="datos">Parentezco:</div>
+      <div class="datos2">{{ datosRecibidos.parentezco }}</div>
+    </ion-card-content>
+    <ion-card-content class="datos-container">
+      <div class="datos">Número de Celular:</div>
+      <div class="datos2">{{ datosRecibidos.numeroCelular }}</div>
+    </ion-card-content>

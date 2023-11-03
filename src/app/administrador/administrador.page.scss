@@ -4,7 +4,7 @@
   justify-content: space-between;
 }
 .body {
-  --background: url('../../assets/fondo.png');
+  --background: rgba(123, 123, 123, 0.64);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,59 +55,50 @@ ion-icon{
   color:rgb(0, 187, 255);
   font-size: 40px;
 }
-.custom-button {
-  width: 90px;
-  height: 90px;
-  --background: red;
-  --border-radius: 50%;
-  color: white;
-  font-size: 30px;
-  filter: drop-shadow(2px 2px 2px rgb(255, 255, 255));
-  position: absolute;
-  bottom: 250px;
-  right: 720px;
-  top: 540px;
-}
-.agregar {
-  --background: none;
-  width: 90px;
-  height: 90px;
-  --border-radius: 45px;
-  position: absolute;
-  bottom: 250px;
-  left: 50px;
-  top: 608px;
-}
-.mas{
+.historial{
   font-size: 50px;
-  color: white;
-}
-.map-container {
-  width: 100%;
-  position: relative;
-  border-radius: 30px;
-  border: 2px solid rgb(0, 187, 255);
-  box-shadow: 2px 2px 2px rgb(0, 187, 255);
-}
-
-.ubicacion {
-  color: white;
+  margin-top: 50px;
   text-align: center;
+  border: 5px solid black;
+  padding: 5px;
+  margin-left: 130px;
+  margin-right: 130px;
+  background-color: black;
+  border-radius: 20px;
+  font-weight: bold;
+  filter: drop-shadow(2px 2px 2px rgb(0, 187, 255));
+}
+.tabla-seguridad {
+  width: 95%;
+  margin: 35px;
+  padding: 50px;
+}
+.tabla-seguridad td {
+  border: 3px solid #000000;
+  padding: 5px;
+  text-align: justify;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+}
+.icono-seguridad {
   font-size: 30px;
-  margin-top: 55px;
+  margin-right: 20px;
+  color: black;
+  margin-left: 20px;
+}
+.encabezado{
+  text-align: center;
+  font-weight: bold;
+}
+.buscar {
+  border-radius: 10px; /* Ajusta el valor según el radio de borde deseado */
+  background-color: transparent; /* Cambia el color de fondo según tus preferencias */
+  padding: 5px;
+  margin-top: 30px;
+  width: 850px;
+  align-items: center;
+  margin-left: 350px;
 }
 
-.addres {
-  color: rgb(255, 255, 255);
-  text-align: center;
-  font-size: 25px;
-  margin-top: 20px;
-}
-.mapa{
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 30px;
-}
-.map{
-  border-radius: 30px;
-}
