@@ -15,6 +15,31 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'acerca-de-nosotros',
+    loadChildren: () => import('./acerca-de-nosotros/acerca-de-nosotros.module').then( m => m.AcercaDeNosotrosPageModule)
+  },
+  {
+    path: 'nuestros-servicios',
+    loadChildren: () => import('./nuestros-servicios/nuestros-servicios.module').then( m => m.NuestrosServiciosPageModule)
+  },
+  {
+    path: 'contactanos',
+    loadChildren: () => import('./contactanos/contactanos.module').then( m => m.ContactanosPageModule)
+  },
+	}
+  {
+    path: 'contact-detail',
+    loadChildren: () => import('./contact-detail/contact-detail.module').then( m => m.ContactDetailPageModule)
+  },
+  {
+    path: 'administrador',
+    loadChildren: () => import('./administrador/administrador.module').then( m => m.AdministradorPageModule)
+  },
+
+
+];
+}
 ];
 
 @NgModule({
