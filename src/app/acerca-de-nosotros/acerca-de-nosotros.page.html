@@ -1,0 +1,58 @@
+<ion-header [translucent]="true" class="header-style">
+  <ion-toolbar class="ion-text-center">
+    <ion-title class="title-style">Acerca de Nosotros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center content-style">
+
+  <ion-img src="/assets/icon/SS.PNG" class="grande"></ion-img>
+
+  <br>
+  <ion-card class="texto-imagen-container">
+    <ion-img src="/assets/icon/mision.jpg" class="imagen-izquierda"></ion-img>
+    <ion-card-content>
+      <ion-title class="title-style1">NUESTRA MISIÓN</ion-title>
+      <p class="tex-con">
+        Fomentar la tranquilidad y el bienestar de nuestros clientes, proporcionando el respaldo necesario para enfrentar situaciones de riesgo.
+         Buscamos ofrecer un sistema de apoyo confiable que les permita tomar decisiones acertadas y seguras en sus momentos más críticos.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <ion-card class="texto-imagen-container">
+    <ion-card-content>
+      <ion-title class="title-style2">NUESTRA VISIÓN</ion-title>
+      <p class="tex-con">
+        Convertirnos en una empresa líder a nivel nacional, distinguida por su eficacia, cimentada en sólidos 
+        principios y valores de trabajo, y destacándose como una de las mejores en su campo.
+      </p>
+    </ion-card-content>
+    <ion-img src="/assets/icon/vision.jpg" class="imagen-derecha"></ion-img>
+  </ion-card>
+
+  <br>
+  <br>
+
+  <ion-title class="title-style3">EQUIPO DE TRABAJO</ion-title>
+  <br>
+  <p class="tex-con1">
+    Somos un equipo de profesionales comprometidos con el bienestar de las personas en situaciones 
+    de riesgo o emergencia. Nuestra experiencia y dedicación se reflejan en todo lo que hacemos.
+  </p>
+  <br>
+
+  
+  <div class="swiper-container equipo-trabajo">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let slide of slides">
+        <ion-img [src]="slide.image" class="slide-image"></ion-img>
+        <p class="slide-description">{{ slide.description }}</p>
+      </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  
+</ion-content>

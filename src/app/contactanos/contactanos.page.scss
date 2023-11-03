@@ -1,0 +1,92 @@
+.title-style {
+    color: rgb(123, 193, 216);
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .background-image {
+    background-image: url('/assets/icon/Imagen1.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta real de tu imagen */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  
+
+  /* Estilos para el formulario */
+ion-item {
+  --ion-label-stacked-padding-start: 0;
+  --ion-label-stacked-padding-end: 0;
+}
+
+ion-label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #f7eeee;
+  padding: 20px;
+}
+
+ion-input, ion-textarea {
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+ion-textarea {
+  min-height: 150px; /* Ajusta la altura según tus necesidades */
+  
+}
+/* Aumenta el tamaño del contenido en la tarjeta */
+ion-card-content {
+  font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+}
+
+/* Estilo CSS para hacer que la tarjeta sea más grande */
+ion-card {
+  height: auto; /* Esto permite que la altura de la tarjeta se ajuste automáticamente a su contenido */
+  margin: 10px; /* Margen alrededor de la tarjeta */
+  padding: 10px; /* Relleno dentro de la tarjeta para separar los elementos */
+}
+
+
+
+/* Aumenta el tamaño de los iconos en la tarjeta */
+ion-icon {
+  font-size: 24px; /* Ajusta el tamaño de los iconos según tus necesidades */
+}
+/* Estilo CSS para los íconos de redes sociales */
+.social-icon {
+  margin-right: 25px; /* Agrega un margen a la derecha de cada ícono para separarlos */
+}
+
+/* Estilo para el botón "Enviar" */
+button {
+  background-color:#0056b3; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  padding: 12px 20px; /* Espaciado interno del botón */
+  border: none; /* Quitar el borde del botón */
+  border-radius: 5px; /* Radio de borde para bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+  float: right;
+}
+
+/* Estilo para el botón al pasar el mouse (hover) */
+button:hover {
+  background-color: #007bff; /* Cambiar el color de fondo al pasar el mouse */
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* Estilo CSS para el mensaje de éxito */
+.mensaje-exito {
+  background-color: #4CAF50; /* Color de fondo verde (puedes cambiarlo) */
+  color: #fff; /* Color de texto blanco */
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
