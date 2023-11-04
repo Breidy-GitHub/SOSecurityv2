@@ -36,11 +36,7 @@ const routes: Routes = [
     path: 'administrador',
     loadChildren: () => import('./administrador/administrador.module').then( m => m.AdministradorPageModule)
   },
-
-
 ];
-
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
