@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>datos-salud</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="/assets/icon/salud.png"></ion-img>
+  <ion-title>Datos de Salud</ion-title> 
+  <div class="card-container">
+    <div class="card-wrapper">
+      <ion-card class="small-card" (click)="handleCardClick()">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Enfermedades</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+
+
+    <div class="card-wrapper">
+      <ion-card class="small-card">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Alergias</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+
+    <!-- Nueva tarjeta 1 -->
+    <div class="card-wrapper">
+      <ion-card class="small-card">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Medicamentos Actuales</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+
+    <!-- Nueva tarjeta 2 -->
+    <div class="card-wrapper">
+      <ion-card class="small-card">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Informacion Adicional</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div *ngIf="mostrarLista" class="lista-derecha">
+      <ion-item>
+        <ion-label>Hipertensión</ion-label>
+        <ion-checkbox end></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cáncer</ion-label>
+        <ion-checkbox end></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Asma</ion-label>
+        <ion-checkbox end></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cardiopatia</ion-label>
+        <ion-checkbox end></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Colesterol Alto</ion-label>
+        <ion-checkbox end></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Artritis</ion-label>
+        <ion-checkbox end></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Otros</ion-label>
+        <ion-input placeholder="Escribir" end></ion-input>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>
