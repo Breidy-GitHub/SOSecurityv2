@@ -7,9 +7,9 @@
           <ion-icon  class="icono" name="person"></ion-icon>
         </ion-segment-button>
         <ion-segment-button class="texto" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
-        <ion-segment-button class="texto" value="servicios">Nuestros Servicios</ion-segment-button>
-        <ion-segment-button class="texto" value="acerca">Acerca de Nosotros</ion-segment-button>
-        <ion-segment-button class="texto" value="contacto">Contáctenos</ion-segment-button>
+        <ion-segment-button class="texto" value="servicios" (click)="navigateToNuestros()">Nuestros Servicios</ion-segment-button>
+        <ion-segment-button class="texto" value="acerca" (click)="navigateToNosotros()">Acerca de Nosotros</ion-segment-button>
+        <ion-segment-button class="texto" value="contacto" (click)="navigateToContac()">Contáctenos</ion-segment-button>
         <ion-segment-button (click)="navigateTocontact()">
           <ion-icon  class="icono" name="settings-outline"></ion-icon>
         </ion-segment-button>
@@ -35,11 +35,11 @@
         <ion-icon name="stats-chart" slot="start"></ion-icon>
         Mis Alertas
       </ion-item>
-      <ion-item class="lista">
+      <ion-item class="lista" (click)="navigateToAdmin()">
         <ion-icon name="person" slot="start"></ion-icon>
         Customers
       </ion-item>
-      <ion-item class="lista">
+      <ion-item class="lista" (click)="navigateToDatosSaludPage()">
         <ion-icon name="heart" slot="start"></ion-icon>
         Datos Salud
       </ion-item>

@@ -4,12 +4,12 @@
       <img src="../../assets/logo.png" alt="Logo" class="logo" />
       <ion-segment>
         <ion-segment-button class="usuario" value="cuenta" (click)="abrirBarraLateral()">
-          <ion-icon  class="icono" name="person"></ion-icon>
+          <ion-icon class="icono" name="person"></ion-icon>
         </ion-segment-button>
         <ion-segment-button class="texto" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
-        <ion-segment-button class="texto" value="servicios">Nuestros Servicios</ion-segment-button>
-        <ion-segment-button class="texto" value="acerca">Acerca de Nosotros</ion-segment-button>
-        <ion-segment-button class="texto" value="contacto">Contáctenos</ion-segment-button>
+        <ion-segment-button class="texto" value="servicios" (click)="navigateToNuestros()">Nuestros Servicios</ion-segment-button>
+        <ion-segment-button class="texto" value="acerca" (click)="navigateToNosotros()">Acerca de Nosotros</ion-segment-button>
+        <ion-segment-button class="texto" value="contacto" (click)="navigateToContac()">Contáctenos</ion-segment-button>
       </ion-segment>
     </div>
   </ion-toolbar>
@@ -49,52 +49,132 @@
 </ion-menu>
 
 <ion-content class="body">
-  <ion-title class="historial">Historial de SOSECURITY</ion-title>
-  <ion-searchbar [(ngModel)]="searchText" (ionChange)="onSearch($event)" class="buscar"></ion-searchbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8"></ion-col>
+      <ion-col size="4">
+        <ion-title class="historial">Historial de SOSecurity</ion-title>
+        <ion-searchbar [(ngModel)]="searchText" (ionChange)="onSearch($event)" class="buscar"></ion-searchbar>
+      </ion-col>
+    </ion-row>
 
-  <table class="tabla-seguridad">
-    <tr>
-      <td style="width: 180px">
-        <ion-icon name="shield-outline" class="icono-seguridad"></ion-icon>
-        Eventos de seguridad
-      </td>
-      <td style="width: 50px"><p class="encabezado">Fecha/Hora</p></td>
-      <td style="width: 50px"><p class="encabezado">Evento</p></td>
-      <td style="width: 50px"><p class="encabezado">Usuario</p></td>
-      <td style="width: 50px"><p class="encabezado">Detalles</p></td>
-    </tr>
+    <ion-row>
+      <ion-col size="4">
+        <ion-card class="card1" [class.selected]="selectedCard === 'Eventos de seguridad'" (click)="mostrarEventos('Eventos de seguridad')">
+          <ion-icon name="shield" class="icono2"></ion-icon>
+          Eventos de Seguridad
+        </ion-card>
 
-    <tr>
-      <td>
-        <ion-icon name="people-outline" class="icono-seguridad"></ion-icon>
-        Actividades de usuario
-      </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+        <ion-card
+          class="card1" [class.selected]="selectedCard === 'Actividades de usuario'" (click)="mostrarEventos('Actividades de usuario')">
+          <ion-icon name="people" class="icono2"></ion-icon>
+          Actividades de Usuario
+        </ion-card>
 
-    <tr>
-      <td>
-        <ion-icon name="alert-outline" class="icono-seguridad"></ion-icon>
-        Alertas emitidas
-      </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+        <ion-card class="card1" [class.selected]="selectedCard === 'Alertas emitidas'" (click)="mostrarEventos('Alertas emitidas')">
+          <ion-icon name="warning" class="icono2"></ion-icon>
+          Alertas Emitidas
+        </ion-card>
 
-    <tr>
-      <td>
-        <ion-icon name="cloud-outline" class="icono-seguridad"></ion-icon>
-        Respaldo y restauración de datos
-      </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+        <ion-card
+          class="card1" [class.selected]="selectedCard === 'Respaldo y restauración de datos'" (click)="mostrarEventos('Respaldo y restauración de datos')">
+          <ion-icon name="cloud" class="icono2"></ion-icon>
+          Respaldo y Restauración de Datos
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="8">
+        <div>
+          <div *ngIf="vistaOpt1">
+            <table>
+            <ion-title class="Ttabla">Eventos de Seguridad</ion-title>
+            <ion-grid>
+              <tr>
+              <ion-row>
+                <td class="encabezado"><ion-col>Fecha/Hora</ion-col></td>
+                <td class="encabezado"><ion-col>Evento</ion-col></td>
+                <td class="encabezado"><ion-col>Usuario</ion-col></td>
+                <td class="encabezado"><ion-col>Detalles</ion-col></td>
+              </ion-row>
+            </tr>
+            <ion-row *ngFor="let d of array; let i = index">
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.usuario}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
+            </ion-row>
+            </ion-grid>
+          </table>
+          </div>
+
+          <div *ngIf="vistaOpt2">
+            <table>
+            <ion-title class="Ttabla">Actividades de Usuario</ion-title>
+            <ion-grid>
+              <tr>
+              <ion-row>
+                <td class="encabezado"><ion-col>Fecha/Hora</ion-col></td>
+                <td class="encabezado"><ion-col>Evento</ion-col></td>
+                <td class="encabezado"><ion-col>Usuario</ion-col></td>
+                <td class="encabezado"><ion-col>Detalles</ion-col></td>
+              </ion-row>
+            </tr>
+            <ion-row *ngFor="let d of array; let i = index">
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.usuario}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
+            </ion-row>
+            </ion-grid>
+          </table>
+          </div>
+
+          <div *ngIf="vistaOpt3">
+            <table>
+            <ion-title class="Ttabla">Alertas Emitidas</ion-title>
+            <ion-grid>
+              <tr>
+              <ion-row>
+                <td class="encabezado"><ion-col>Fecha/Hora</ion-col></td>
+                <td class="encabezado"><ion-col>Evento</ion-col></td>
+                <td class="encabezado"><ion-col>Usuario</ion-col></td>
+                <td class="encabezado"><ion-col>Detalles</ion-col></td>
+              </ion-row>
+            </tr>
+            <ion-row *ngFor="let d of array; let i = index">
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.usuario}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
+            </ion-row>
+            </ion-grid>
+          </table>
+          </div>
+
+          <div *ngIf="vistaOpt4">
+            <table>
+            <ion-title class="Ttabla">Respaldo y Restauracion de Datos</ion-title>
+            <ion-grid>
+              <tr>
+              <ion-row>
+                <td class="encabezado"><ion-col>Fecha/Hora</ion-col></td>
+                <td class="encabezado"><ion-col>Evento</ion-col></td>
+                <td class="encabezado"><ion-col>Usuario</ion-col></td>
+                <td class="encabezado"><ion-col>Detalles</ion-col></td>
+              </ion-row>
+            </tr>
+            <ion-row *ngFor="let d of array; let i = index">
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.usuario}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
+            </ion-row>
+            </ion-grid>
+          </table>
+          </div>
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

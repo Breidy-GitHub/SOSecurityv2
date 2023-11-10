@@ -19,13 +19,25 @@ export class ContactDetailPage implements OnInit {
   ngOnInit() {
 
   }
-
-  navigateTocontact() {
-    this.router.navigate(['/contact-detail']);
-  }
   navigateToHome() {
     this.router.navigate(['/home']);
   }
+  navigateToNosotros() {
+    this.router.navigate(['/acerca-de-nosotros']);
+  }
+  navigateToContac() {
+    this.router.navigate(['/contactanos']);
+  }
+  navigateToNuestros() {
+    this.router.navigate(['/nuestros-servicios']);
+  }
+  navigateToDatosSaludPage() {
+    this.router.navigate(['datos-salud']);
+  }
+  navigateToAdmin() {
+    this.router.navigate(['/administrador']);
+  }
+
   abrirBarraLateral() {
     this.ngZone.run(() => {
       const menu = document.querySelector('ion-menu');
