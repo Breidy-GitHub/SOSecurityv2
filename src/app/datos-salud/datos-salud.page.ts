@@ -15,4 +15,5 @@ export class DatosSaludPage {
     // Cambiar la visibilidad de la lista al hacer clic en la tarjeta
     this.mostrarLista = !this.mostrarLista;
   }
+
 }

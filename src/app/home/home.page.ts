@@ -95,6 +95,21 @@ export class HomePage implements OnInit {
     this.router.navigate(['/home']);
   }
 
+  navigateToAdmin() {
+    this.router.navigate(['/administrador']);
+  }
+
+  navigateToNosotros() {
+    this.router.navigate(['/acerca-de-nosotros']);
+  }
+
+  navigateToContac() {
+    this.router.navigate(['/contactanos']);
+  }
+  navigateToNuestros() {
+    this.router.navigate(['/nuestros-servicios']);
+  }
+
   abrirBarraLateral() {
     this.ngZone.run(() => {
       const menu = document.querySelector('ion-menu');
