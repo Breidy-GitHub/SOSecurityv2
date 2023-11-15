@@ -177,4 +177,6 @@ export class DatosSaludPage {
   
     await alert.present();
   }
+
+}
 }  

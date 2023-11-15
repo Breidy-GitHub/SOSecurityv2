@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nuestros-servicios',
@@ -6,9 +7,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./nuestros-servicios.page.scss'],
 })
 export class NuestrosServiciosPage {
-  constructor() {}
+  constructor(private router: Router, private ngZone: NgZone) {}
 
-  
+
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+  navigateToNosotros() {
+    this.router.navigate(['/acerca-de-nosotros']);
+  }
+  navigateToContac() {
+    this.router.navigate(['/contactanos']);
+  }
+  navigateToNuestros() {
+    this.router.navigate(['/nuestros-servicios']);
+  }
+
+  abrirBarraLateral() {
+    this.ngZone.run(() => {
+      const menu = document.querySelector('ion-menu');
+      if (menu) {
+        menu.open();
+      }
+    });
+  }
+
+
   mostrarParrafoAdicional = false;
 
   toggleParrafoAdicional() {
@@ -24,7 +48,7 @@ export class NuestrosServiciosPage {
         verMasButton.textContent = 'Ocultar';
       }
 
-  
+
       this.mostrarParrafoAdicional = !this.mostrarParrafoAdicional;
     }
   }

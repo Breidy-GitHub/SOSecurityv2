@@ -13,6 +13,7 @@ export class HomePage implements OnInit {
   map: google.maps.Map | undefined;
   userAddress: string | undefined;
   ubicacionUsuario: google.maps.Marker | undefined;
+  contactos: any[] = [];
 
   constructor(private ngZone: NgZone, private router: Router, private alertController: AlertController) {}
 
@@ -95,6 +96,21 @@ export class HomePage implements OnInit {
     this.router.navigate(['/home']);
   }
 
+  navigateToAdmin() {
+    this.router.navigate(['/administrador']);
+  }
+
+  navigateToNosotros() {
+    this.router.navigate(['/acerca-de-nosotros']);
+  }
+
+  navigateToContac() {
+    this.router.navigate(['/contactanos']);
+  }
+  navigateToNuestros() {
+    this.router.navigate(['/nuestros-servicios']);
+  }
+
   abrirBarraLateral() {
     this.ngZone.run(() => {
       const menu = document.querySelector('ion-menu');
@@ -140,14 +156,32 @@ export class HomePage implements OnInit {
         {
           text: 'Guardar',
           handler: (data) => {
-            console.log('Datos ingresados:', data);
-            this.router.navigate(['/contact-detail', data]);
+            if (this.todosLosCamposLlenos(data)) {
+              console.log('Datos ingresados:', data);
+              this.contactos.push(data);
+              localStorage.setItem('contactos', JSON.stringify(this.contactos));
+              this.router.navigate(['/contact-detail', data]);
+            } else {
+              this.mostrarAlerta();
+              this.mostrarAlertaCamposVacios();
+            }
           }
         }
       ],
       cssClass: 'custom-alert'
     });
-
+    await alert.present();
+  }
+  todosLosCamposLlenos(data: any): boolean {
+    return Object.values(data).every(value => value !== undefined && value !== '');
+  }
+  async mostrarAlertaCamposVacios() {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: 'Favor llenar todos los campos.',
+      buttons: ['OK'],
+      cssClass: 'custom-alert'
+    });
     await alert.present();
   }
 }
