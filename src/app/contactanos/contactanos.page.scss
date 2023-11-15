@@ -18,17 +18,18 @@
 ion-item {
   --ion-label-stacked-padding-start: 0;
   --ion-label-stacked-padding-end: 0;
+  color: #0a0a0a;
 }
 
 ion-label {
   font-weight: bold;
   font-size: 14px;
-  color: #f7eeee;
+  color: #0a0a0a;
   padding: 20px;
 }
 
 ion-input, ion-textarea {
-  border: 1px solid #e4e4e4;
+  border: 1px solid #161616;
   border-radius: 5px;
   padding: 8px;
   font-size: 14px;
@@ -41,6 +42,7 @@ ion-textarea {
 /* Aumenta el tamaño del contenido en la tarjeta */
 ion-card-content {
   font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+  
 }
 
 /* Estilo CSS para hacer que la tarjeta sea más grande */
