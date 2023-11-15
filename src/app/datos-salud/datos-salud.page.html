@@ -4,77 +4,158 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-img src="/assets/icon/salud.png"></ion-img>
-  <ion-title>Datos de Salud</ion-title> 
-  <div class="card-container">
-    <div class="card-wrapper">
-      <ion-card class="small-card" (click)="handleCardClick()">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-        <ion-card-header>
-          <ion-card-title>Enfermedades</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </div>
+<ion-content class="bg-content">
 
+  <ion-title>Datos de Salud</ion-title>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <div>
+            <ion-row >
+              <ion-col size="6" >
+                <ion-card (click)="handleCardClick('enfermedades')" >
+                  <ion-row>
+                    <ion-col class="ion-text-center">
+                      <ion-icon src="/assets/icon/paciente.svg" style="font-size: 50px;color: black;"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col class="ion-text-center">
+                      <ion-text style="color: black; font-size: 20px;font-weight: bold;">Enfermedades</ion-text>
+                    </ion-col>
+                  </ion-row>
+                </ion-card>
+              </ion-col>
+              <ion-col size="6">
+                <ion-card (click)="handleCardClick('alergias')">
+                  <ion-row>
+                    <ion-col class="ion-text-center">
+                      <ion-icon src="/assets/icon/alergia.svg" style="font-size: 50px;color: black;"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col class="ion-text-center">
+                      <ion-text style="color: black; font-size: 20px;font-weight: bold;">Alergias</ion-text>
+                    </ion-col>
+                  </ion-row>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <ion-card (click)="handleCardClick('medicamentos')">
+                  <ion-row>
+                    <ion-col class="ion-text-center">
+                      <ion-icon src="/assets/icon/medicamento.svg" style="font-size: 50px;color: black;"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col class="ion-text-center">
+                      <ion-text style="color: black; font-size: 20px;font-weight: bold;">Medicamentos Actuales </ion-text>
+                    </ion-col>
+                  </ion-row>
+                </ion-card>
+              </ion-col>
+              <ion-col size="6">
+                <ion-card (click)="handleCardClick('informacion')">
+                  <ion-row>
+                    <ion-col class="ion-text-center">
+                      <ion-icon src="/assets/icon/informacion-personal.svg" style="font-size: 50px;color: black;"></ion-icon>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col class="ion-text-center">
+                      <ion-text style="color: black; font-size: 20px;font-weight: bold;">Información Adicional</ion-text>
+                    </ion-col>
+                  </ion-row>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </div>
+      </ion-col>
+      <ion-col>
 
-    <div class="card-wrapper">
-      <ion-card class="small-card">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-        <ion-card-header>
-          <ion-card-title>Alergias</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    <!-- Nueva tarjeta 1 -->
-    <div class="card-wrapper">
-      <ion-card class="small-card">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-        <ion-card-header>
-          <ion-card-title>Medicamentos Actuales</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </div>
-
-    <!-- Nueva tarjeta 2 -->
-    <div class="card-wrapper">
-      <ion-card class="small-card">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-        <ion-card-header>
-          <ion-card-title>Informacion Adicional</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </div>
-    <div *ngIf="mostrarLista" class="lista-derecha">
-      <ion-item>
-        <ion-label>Hipertensión</ion-label>
-        <ion-checkbox end></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Cáncer</ion-label>
-        <ion-checkbox end></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Asma</ion-label>
-        <ion-checkbox end></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Cardiopatia</ion-label>
-        <ion-checkbox end></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Colesterol Alto</ion-label>
-        <ion-checkbox end></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Artritis</ion-label>
-        <ion-checkbox end></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Otros</ion-label>
-        <ion-input placeholder="Escribir" end></ion-input>
-      </ion-item>
-    </div>
+  <div *ngIf="mostrarLista && cardClicked === 'enfermedades'" class="lista-derecha">
+    <ion-item *ngFor="let campo of enfermedadesCampos">
+      <ion-label>{{ campo.nombre }}</ion-label>
+      <ion-checkbox end [(ngModel)]="campo.seleccionado"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Otros:</ion-label>
+      <ion-input placeholder="Escribir" end></ion-input>
+    </ion-item>
+    <ion-row class="botones-container">
+      <ion-col size="6">
+        <ion-button size="small" expand="full" color="dark" (click)="cancelar()" shape="round">Cancelar</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button size="small" expand="full" color="primary" (click)="guardar()" shape="round">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
   </div>
+
+  <div *ngIf="mostrarLista && cardClicked === 'alergias'" class="lista-derecha">
+    <ion-item *ngFor="let campo of alergiasCampos">
+      <ion-label>{{ campo.nombre }}</ion-label>
+      <ion-checkbox end [(ngModel)]="campo.seleccionado"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Otros:</ion-label>
+      <ion-input placeholder="Escribir" end></ion-input>
+    </ion-item>
+    <ion-row class="botones-container">
+      <ion-col size="6">
+        <ion-button size="small" expand="full" color="dark" (click)="cancelar()" shape="round">Cancelar</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button size="small" expand="full" color="primary" (click)="guardar()" shape="round">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="mostrarLista && cardClicked === 'medicamentos'" class="lista-derecha">
+    <form>
+      <ion-item *ngFor="let campo of medicamentosCampos">
+        <ion-label>{{ campo.nombre }}</ion-label>
+        <ion-input placeholder="Ingrese Información"></ion-input>
+      </ion-item>
+    </form>
+    <ion-row class="botones-container">
+      <ion-col size="6">
+        <ion-button size="small" expand="full" color="dark" (click)="cancelar()" shape="round">Cancelar</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button size="small" expand="full" color="primary" (click)="guardar()" shape="round">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="mostrarLista && cardClicked === 'informacion'" class="lista-derecha">
+    <form>
+      <ion-item *ngFor="let campo of informacionCampos">
+        <ion-label>{{ campo.nombre }}</ion-label>
+        <ion-input placeholder="Ingrese Información"></ion-input>
+      </ion-item>
+    </form>
+    <ion-row class="botones-container">
+      <ion-col size="6">
+        <ion-button size="small" expand="full" color="dark" (click)="cancelar()" shape="round">Cancelar</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button size="small" expand="full" color="primary" (click)="guardar()" shape="round">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  
 </ion-content>
