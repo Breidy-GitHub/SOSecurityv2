@@ -15,6 +15,7 @@
 ion-item {
   --ion-label-stacked-padding-start: 0;
   --ion-label-stacked-padding-end: 0;
+  color: #0a0a0a;
 }
 
 ion-label {
@@ -28,6 +29,25 @@ ion-item{
   border-radius: 10px;
   height: 60px;
   margin-top: 5px;
+  color: #0a0a0a;
+  padding: 20px;
+}
+
+ion-input, ion-textarea {
+  border: 1px solid #161616;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+ion-textarea {
+  min-height: 150px; /* Ajusta la altura según tus necesidades */
+  
+}
+/* Aumenta el tamaño del contenido en la tarjeta */
+ion-card-content {
+  font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+  
 }
 ion-card {
   height: auto; /* Esto permite que la altura de la tarjeta se ajuste automáticamente a su contenido */
