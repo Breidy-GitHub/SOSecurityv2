@@ -18,7 +18,7 @@ export class AdministradorPage implements OnInit {
   selectedCard: string | null = null;
 
 
-  constructor(private router: Router, private ngZone: NgZone,) { }
+  constructor(private router: Router, private ngZone: NgZone) { }
 
   onSearch(event: any) {
     const searchTerm = event.detail.value;
@@ -106,7 +106,4 @@ export class AdministradorPage implements OnInit {
     }
     this.selectedCard = valor;
   }
-
-
-
 }

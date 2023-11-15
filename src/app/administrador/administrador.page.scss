@@ -4,7 +4,7 @@
   justify-content: space-between;
 }
 .body {
-  --background: rgba(123, 123, 123, 0.64);
+  --background: white;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,7 +63,8 @@ ion-icon{
   margin-right: 50px;
   border-radius: 20px;
   font-weight: bold;
-  filter: drop-shadow(2px 2px 2px black);
+  filter: drop-shadow(2px 2px 2px rgb(0, 187, 255));
+  color: black;
 }
 .buscar {
   border-radius: 10px;
@@ -79,31 +80,31 @@ ion-icon{
   font-size: 20px;
   text-align: center;
   font-weight: bold;
-  color: white;
-  background: black;
+  color: black;
+  background: rgba(1, 124, 201, 0.719);
   margin-left: 50px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 2px 2px 1px white;
+  box-shadow: 2px 2px 1px black;
 }
   .icono2 {
-    color: white;
+    color: black;
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 10px;
   }
   .Ttabla{
     text-align: center;
-    border: solid black;
-    background: black;
+    background: rgb(1, 124, 201);
     border-radius: 10px;
     font-weight: bold;
     margin-right: 35px;
-    border: 1.5px solid white;
+    border: 2px solid black;
     padding: 10px;
+    font-size: 27px;
   }
   table {
     width: 100%;
@@ -129,7 +130,7 @@ ion-icon{
     text-align: left;
   }
   .fila-azul {
-    background-color: #3498db6f;
+    background-color: #3498db9d;
     padding: 8px;
     color: white;
     text-align: left;

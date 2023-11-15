@@ -1,27 +1,76 @@
+<ion-header>
+  <ion-toolbar class="barra">
+    <div class="header-container">
+      <img src="../../assets/logo.png" alt="Logo" class="logo" />
+      <ion-segment>
+        <ion-segment-button class="usuario" value="cuenta" (click)="abrirBarraLateral()">
+          <ion-icon class="icono" name="person"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button class="texto" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
+        <ion-segment-button class="texto" value="servicios" (click)="navigateToNuestros()">Nuestros Servicios</ion-segment-button>
+        <ion-segment-button class="texto" value="acerca" (click)="navigateToNosotros()">Acerca de Nosotros</ion-segment-button>
+        <ion-segment-button class="texto" value="contacto" (click)="navigateToContac()">Contáctenos</ion-segment-button>
+      </ion-segment>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
 <ion-header [translucent]="true" class="header-style">
   <ion-toolbar class="ion-text-center">
     <ion-title class="title-style">Nuestros Servicios</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-menu side="start" contentId="main-content">
+  <ion-content class="lateral">
+    <div>
+      <ion-avatar class="imagen">
+        <img src="../../assets/icon/favicon.png" alt="Imagen de perfil" />
+      </ion-avatar>
+      <ion-title class="name">Andres Ricardo Parra Salas</ion-title>
+    </div>
+    <ion-list class="lateral">
+      <ion-item class="lista" (click)="navigateToHome()">
+        <ion-icon name="home" slot="start"></ion-icon>
+        Home
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="stats-chart" slot="start"></ion-icon>
+        Alertas Activas
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="person" slot="start"></ion-icon>
+        Usuarios
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="heart" slot="start"></ion-icon>
+        Historiales
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="settings" slot="start"></ion-icon>
+        Configuraciones
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
 <ion-content class="ion-text-center content-style">
   <ion-img src="/assets/icon/principal.png" class="background-image"></ion-img>
   <div class="content-container">
   <br>
-  <br> 
+  <br>
     <ion-title class="title-style1">Protegemos tu información</ion-title>
     <div class="parrafos-container">
       <p class="tex-con" id="parrafo-completo">
-        Utilizamos tecnologías de cifrado avanzadas y prácticas de seguridad de 
+        Utilizamos tecnologías de cifrado avanzadas y prácticas de seguridad de
         vanguardia para garantizar que tus datos personales estén resguardados de
-        cualquier amenaza o acceso no autorizado. 
+        cualquier amenaza o acceso no autorizado.
       </p>
       <p class="tex-con" id="parrafo-adicional" style="display: none;">
-        Tu privacidad es nuestra prioridad, 
+        Tu privacidad es nuestra prioridad,
         y nos esforzamos por mantener tus datos seguros y confidenciales en todo momento.
-        Nuestro equipo de expertos en gestión de datos está comprometido con la confidencialidad y seguridad 
-        de tu información. 
+        Nuestro equipo de expertos en gestión de datos está comprometido con la confidencialidad y seguridad
+        de tu información.
       </p>
     </div>
     <button class="ver-mas-button" id="ver-mas" (click)="toggleParrafoAdicional()">Ver más</button>
@@ -31,7 +80,7 @@
     <br>
 
     <ion-title class="title-style">Como proporcionamos Nuestros Servicios</ion-title>
-    <p>Nos sentimos orgullosos de proporcionar nuestros servicios de manera eficaz, con un alto grado de profesionalismo y 
+    <p>Nos sentimos orgullosos de proporcionar nuestros servicios de manera eficaz, con un alto grado de profesionalismo y
       una amplia variedad de opciones para satisfacer tus necesidades.</p>
     <ion-card class="horizontal-card">
       <img alt="Silhouette of mountains" src="/assets/icon/eficiente.jpeg" />
@@ -39,7 +88,7 @@
         <ion-card-title>Eficiente </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        En el núcleo de nuestra respuesta de emergencia, se encuentra la eficacia, que orienta nuestra estrategia. 
+        En el núcleo de nuestra respuesta de emergencia, se encuentra la eficacia, que orienta nuestra estrategia.
         Implementamos soluciones dinámicas y altamente operativas que aseguran una reacción inmediata en tiempo real,
          garantizando la salvaguardia óptima de tus recursos digitales en momentos críticos.
       </ion-card-content>
@@ -51,7 +100,7 @@
       </ion-card-header>
       <ion-card-content>
         Contamos con un equipo altamente calificado comprometidos en la gestión de emergencias.
-         Nuestros profesionales aportan una vasta experiencia y conocimiento para mantener tus datos seguros 
+         Nuestros profesionales aportan una vasta experiencia y conocimiento para mantener tus datos seguros
          con un alto grado de profesionalismo y dedicación en situaciones de riesgo.
       </ion-card-content>
     </ion-card>
@@ -62,9 +111,9 @@
       </ion-card-header>
       <ion-card-content>
         Reconocemos la singularidad de cada cliente, por lo que ofrecemos una amplia gama de servicios
-         de apoyo para satisfacer tus necesidades específicas. Ya sea que busques protección de datos, 
+         de apoyo para satisfacer tus necesidades específicas. Ya sea que busques protección de datos,
          respuesta a incidentes o soluciones de seguridad personalizadas, estamos aquí para proporcionarte
-          opciones diversas que se adapten a tus requisitos, garantizando la confidencialidad de 
+          opciones diversas que se adapten a tus requisitos, garantizando la confidencialidad de
           tus activos.
       </ion-card-content>
     </ion-card>
@@ -72,7 +121,7 @@
 
     <ion-title class="title-style">Echa un vistazo los  Servicios que Ofrecemos</ion-title>
     <p>Te invitamos a explorar con detenimiento los servicios que ofrecemos, todos diseñados para atender
-       tus necesidades y superar tus expectativas. Te animamos a examinar nuestras soluciones, creadas con 
+       tus necesidades y superar tus expectativas. Te animamos a examinar nuestras soluciones, creadas con
        el propósito de garantizar tu satisfacción y tranquilidad.</p>
 
        <ion-card class="horizontal-card">
@@ -81,7 +130,7 @@
           <ion-card-title>Botón de Panico</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         Cuando te encuentres en una situación de riesgo, puedes confiar en nuestro Botón de Pánico en Tiempo Real para recibir ayuda 
+         Cuando te encuentres en una situación de riesgo, puedes confiar en nuestro Botón de Pánico en Tiempo Real para recibir ayuda
          de manera inmediata. Basta con pulsarlo y estaremos a su disposición al instante, proporcionándote apoyo necesario en situaciones críticas."
         </ion-card-content>
       </ion-card>
@@ -96,7 +145,7 @@
            Te permitimos compartir tu ubicación en tiempo real, lo que nos permite brindarte ayuda de manera más efectiva.
         </ion-card-content>
       </ion-card>
-      
+
       <ion-card class="horizontal-card">
         <ion-icon name="warning-outline" class="icon-grande"></ion-icon>
         <ion-card-header>
@@ -107,14 +156,14 @@
            y la gravedad de la situación. Te proporcionamos un control total sobre cómo deseas recibir ayuda y atención.
         </ion-card-content>
       </ion-card>
-      
+
       <ion-card class="horizontal-card">
         <ion-icon name="person-add-outline"class="icon-grande"></ion-icon>
         <ion-card-header>
           <ion-card-title>Red de Apoyo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          Ofrecemos la posibilidad de configurar una red de apoyo personalizada al agregar contactos de confianza. Esto te permite designar a personas de tu 
+          Ofrecemos la posibilidad de configurar una red de apoyo personalizada al agregar contactos de confianza. Esto te permite designar a personas de tu
           elección que puedan ser contactadas en situaciones de riesgo, brindándote el apoyo de alguien de confianza.
         </ion-card-content>
       </ion-card>
@@ -125,7 +174,7 @@
           <ion-card-title>Respaldo de información</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          Ofrecemos la posibilidad de configurar una red de apoyo personalizada al agregar contactos de confianza. Esto te permite designar a personas de tu 
+          Ofrecemos la posibilidad de configurar una red de apoyo personalizada al agregar contactos de confianza. Esto te permite designar a personas de tu
           elección que puedan ser contactadas en situaciones de riesgo, brindándote el apoyo de alguien de confianza.
         </ion-card-content>
       </ion-card>
@@ -161,6 +210,6 @@
             <img class="horizontal-image" src="/assets/icon/riesgos.jpg" alt="Imagen 2">
         </div>
     </div>
-      
+
   </div>
 </ion-content>

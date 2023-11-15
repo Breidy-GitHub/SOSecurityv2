@@ -1,8 +1,58 @@
+<ion-header>
+  <ion-toolbar class="barra">
+    <div class="header-container">
+      <img src="../../assets/logo.png" alt="Logo" class="logo" />
+      <ion-segment>
+        <ion-segment-button class="usuario" value="cuenta" (click)="abrirBarraLateral()">
+          <ion-icon class="icono" name="person"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button class="texto2" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
+        <ion-segment-button class="texto2" value="servicios" (click)="navigateToNuestros()">Nuestros Servicios</ion-segment-button>
+        <ion-segment-button class="texto2" value="acerca" (click)="navigateToNosotros()">Acerca de Nosotros</ion-segment-button>
+        <ion-segment-button class="texto2" value="contacto" (click)="navigateToContac()">Contáctenos</ion-segment-button>
+      </ion-segment>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
 <ion-header [translucent]="true" class="header-style">
   <ion-toolbar class="ion-text-center">
     <ion-title class="title-style">Acerca de Nosotros</ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-menu side="start" contentId="main-content">
+  <ion-content class="lateral">
+    <div>
+      <ion-avatar class="imagen">
+        <img src="../../assets/icon/favicon.png" alt="Imagen de perfil" />
+      </ion-avatar>
+      <ion-title class="name">Andres Ricardo Parra Salas</ion-title>
+    </div>
+    <ion-list class="lateral">
+      <ion-item class="lista" (click)="navigateToHome()">
+        <ion-icon name="home" slot="start"></ion-icon>
+        Home
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="stats-chart" slot="start"></ion-icon>
+        Alertas Activas
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="person" slot="start"></ion-icon>
+        Usuarios
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="heart" slot="start"></ion-icon>
+        Historiales
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="settings" slot="start"></ion-icon>
+        Configuraciones
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
 <ion-content class="ion-text-center content-style">
 
@@ -24,7 +74,7 @@
     <ion-card-content>
       <ion-title class="title-style2">NUESTRA VISIÓN</ion-title>
       <p class="tex-con">
-        Convertirnos en una empresa líder a nivel nacional, distinguida por su eficacia, cimentada en sólidos 
+        Convertirnos en una empresa líder a nivel nacional, distinguida por su eficacia, cimentada en sólidos
         principios y valores de trabajo, y destacándose como una de las mejores en su campo.
       </p>
     </ion-card-content>
@@ -37,12 +87,12 @@
   <ion-title class="title-style3">EQUIPO DE TRABAJO</ion-title>
   <br>
   <p class="tex-con1">
-    Somos un equipo de profesionales comprometidos con el bienestar de las personas en situaciones 
+    Somos un equipo de profesionales comprometidos con el bienestar de las personas en situaciones
     de riesgo o emergencia. Nuestra experiencia y dedicación se reflejan en todo lo que hacemos.
   </p>
   <br>
 
-  
+
   <div class="swiper-container equipo-trabajo">
     <div class="swiper-wrapper">
       <div class="swiper-slide" *ngFor="let slide of slides">
@@ -54,5 +104,5 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-pagination"></div>
   </div>
-  
+
 </ion-content>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contactanos',
@@ -13,8 +14,8 @@ export class ContactanosPage  {
     subject: '',
     message: '',
   };
-  
-  constructor(private alertController: AlertController) {
+
+  constructor(private alertController: AlertController,private router: Router, private ngZone: NgZone) {
     this.resetForm();
   }
 
@@ -47,6 +48,27 @@ export class ContactanosPage  {
 
       await errorAlert.present();
     }
+  }
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+  navigateToNosotros() {
+    this.router.navigate(['/acerca-de-nosotros']);
+  }
+  navigateToContac() {
+    this.router.navigate(['/contactanos']);
+  }
+  navigateToNuestros() {
+    this.router.navigate(['/nuestros-servicios']);
+  }
+
+  abrirBarraLateral() {
+    this.ngZone.run(() => {
+      const menu = document.querySelector('ion-menu');
+      if (menu) {
+        menu.open();
+      }
+    });
   }
 
   resetForm() {

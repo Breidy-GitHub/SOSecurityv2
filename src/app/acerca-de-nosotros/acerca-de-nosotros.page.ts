@@ -1,5 +1,6 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit,NgZone, OnInit } from '@angular/core';
 import Swiper from 'swiper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acerca-de-nosotros',
@@ -28,8 +29,30 @@ export class AcercaDeNosotrosPage implements AfterViewInit {
 
   swiper: Swiper;
 
-constructor() {
+constructor(private router: Router,private ngZone: NgZone) {
   this.swiper = new Swiper('.swiper-container');
+}
+
+navigateToHome() {
+  this.router.navigate(['/home']);
+}
+navigateToNosotros() {
+  this.router.navigate(['/acerca-de-nosotros']);
+}
+navigateToContac() {
+  this.router.navigate(['/contactanos']);
+}
+navigateToNuestros() {
+  this.router.navigate(['/nuestros-servicios']);
+}
+
+abrirBarraLateral() {
+  this.ngZone.run(() => {
+    const menu = document.querySelector('ion-menu');
+    if (menu) {
+      menu.open();
+    }
+  });
 }
 
   ngAfterViewInit() {

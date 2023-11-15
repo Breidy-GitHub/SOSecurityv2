@@ -11,9 +11,6 @@
     background-repeat: no-repeat;
     height: 100vh;
   }
-  
-  
-
   /* Estilos para el formulario */
 ion-item {
   --ion-label-stacked-padding-start: 0;
@@ -23,42 +20,38 @@ ion-item {
 ion-label {
   font-weight: bold;
   font-size: 14px;
-  color: #f7eeee;
-  padding: 20px;
+  color: black;
+  margin-top: -10px;
 }
-
-ion-input, ion-textarea {
-  border: 1px solid #e4e4e4;
-  border-radius: 5px;
-  padding: 8px;
-  font-size: 14px;
+ion-item{
+  --background: black;
+  border-radius: 10px;
+  height: 60px;
+  margin-top: 5px;
 }
-
-ion-textarea {
-  min-height: 150px; /* Ajusta la altura según tus necesidades */
-  
-}
-/* Aumenta el tamaño del contenido en la tarjeta */
-ion-card-content {
-  font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
-}
-
-/* Estilo CSS para hacer que la tarjeta sea más grande */
 ion-card {
   height: auto; /* Esto permite que la altura de la tarjeta se ajuste automáticamente a su contenido */
-  margin: 10px; /* Margen alrededor de la tarjeta */
+  margin: 40px; /* Margen alrededor de la tarjeta */
   padding: 10px; /* Relleno dentro de la tarjeta para separar los elementos */
+  border-radius: 20px;
+}
+.infor{
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
-
-
-/* Aumenta el tamaño de los iconos en la tarjeta */
-ion-icon {
-  font-size: 24px; /* Ajusta el tamaño de los iconos según tus necesidades */
+.Icon {
+  font-size: 34px;
+  color: white;
 }
 /* Estilo CSS para los íconos de redes sociales */
-.social-icon {
+.social {
   margin-right: 25px; /* Agrega un margen a la derecha de cada ícono para separarlos */
+  font-size: 34px;
+  padding: 10px;
+  color: white;
 }
 
 /* Estilo para el botón "Enviar" */
@@ -89,4 +82,61 @@ button:hover {
   padding: 10px;
   text-align: center;
   margin-top: 10px;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.body {
+  --background: rgba(123, 123, 123, 0.64);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  height: 60px;
+  border-radius: 10px;
+}
+.barra{
+  --background: black;
+}
+.texto{
+  color: white;
+  margin-right: 60px;
+  height: auto;
+  width: 200px;
+}
+.usuario{
+  height: auto;
+  width: 80px;
+}
+.imagen{
+  margin-left: 70px;
+  margin-top: 80px;
+  filter: drop-shadow(0 2px 4px rgb(227, 8, 8));
+  height: auto;
+  width: 150px;
+}
+.lateral{
+  --background: rgb(221, 211, 211);
+}
+.name{
+  margin-top: 20px;
+  color: black;
+  font-size: 19px;
+  font-weight: bold;
+}
+.lista{
+  margin-top: 20px;
+  --background: rgb(221, 211, 211);
+  color: black;
+}
+ion-icon{
+  color: black;
+}
+.icono{
+  color:rgb(0, 187, 255);
+  font-size: 40px;
 }

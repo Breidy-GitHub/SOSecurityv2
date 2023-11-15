@@ -49,24 +49,31 @@
 </ion-menu>
 
 <ion-content class="body">
-  <ion-card class="custom-card">
-    <ion-card-header class="titulo">
-      Datos del Contacto
-    </ion-card-header>
+  <ng-container *ngFor="let contacto of getContactos(); let i = index">
+    <ion-card class="custom-card">
+      <ion-card-header class="titulo">
+        Datos del Contacto
+      </ion-card-header>
+      <ion-card-content class="datos-container">
+        <div class="datos">Nombres:</div>
+        <div class="datos2">{{ contacto.nombre }}</div>
+      </ion-card-content>
+      <ion-card-content class="datos-container">
+        <div class="datos">Apellidos:</div>
+        <div class="datos2">{{ contacto.apellidos }}</div>
+      </ion-card-content>
+      <ion-card-content class="datos-container">
+        <div class="datos">Parentezco:</div>
+        <div class="datos2">{{ contacto.parentezco }}</div>
+      </ion-card-content>
+      <ion-card-content class="datos-container">
+        <div class="datos">Número de Celular:</div>
+        <div class="datos2">{{ contacto.numeroCelular }}</div>
+      </ion-card-content>
+      <ion-button fill="clear" class="borrar" (click)="eliminarContacto(i)">
+        <ion-icon class="iconB" name="trash"></ion-icon>
+      </ion-button>
+    </ion-card>
+  </ng-container>
+</ion-content>
 
-    <ion-card-content class="datos-container">
-      <div class="datos">Nombres:</div>
-      <div class="datos2">{{ datosRecibidos.nombre }}</div>
-    </ion-card-content>
-    <ion-card-content class="datos-container">
-      <div class="datos">Apellidos:</div>
-      <div class="datos2">{{ datosRecibidos.apellidos }}</div>
-    </ion-card-content>
-    <ion-card-content class="datos-container">
-      <div class="datos">Parentezco:</div>
-      <div class="datos2">{{ datosRecibidos.parentezco }}</div>
-    </ion-card-content>
-    <ion-card-content class="datos-container">
-      <div class="datos">Número de Celular:</div>
-      <div class="datos2">{{ datosRecibidos.numeroCelular }}</div>
-    </ion-card-content>

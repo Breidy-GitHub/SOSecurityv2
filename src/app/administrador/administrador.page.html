@@ -53,7 +53,7 @@
     <ion-row>
       <ion-col size="8"></ion-col>
       <ion-col size="4">
-        <ion-title class="historial">Historial de SOSecurity</ion-title>
+        <ion-title class="historial">Historial SOSecurity</ion-title>
         <ion-searchbar [(ngModel)]="searchText" (ionChange)="onSearch($event)" class="buscar"></ion-searchbar>
       </ion-col>
     </ion-row>
@@ -114,8 +114,8 @@
               <tr>
               <ion-row>
                 <td class="encabezado"><ion-col>Fecha/Hora</ion-col></td>
-                <td class="encabezado"><ion-col>Evento</ion-col></td>
                 <td class="encabezado"><ion-col>Usuario</ion-col></td>
+                <td class="encabezado"><ion-col>Acción</ion-col></td>
                 <td class="encabezado"><ion-col>Detalles</ion-col></td>
               </ion-row>
             </tr>
@@ -136,9 +136,9 @@
               <tr>
               <ion-row>
                 <td class="encabezado"><ion-col>Fecha/Hora</ion-col></td>
-                <td class="encabezado"><ion-col>Evento</ion-col></td>
-                <td class="encabezado"><ion-col>Usuario</ion-col></td>
-                <td class="encabezado"><ion-col>Detalles</ion-col></td>
+                <td class="encabezado"><ion-col>Tipo de Alerta</ion-col></td>
+                <td class="encabezado"><ion-col>Ubicación</ion-col></td>
+                <td class="encabezado"><ion-col>Dispositivo</ion-col></td>
               </ion-row>
             </tr>
             <ion-row *ngFor="let d of array; let i = index">
@@ -158,9 +158,9 @@
               <tr>
               <ion-row>
                 <td class="encabezado"><ion-col>Fecha/Hora</ion-col></td>
-                <td class="encabezado"><ion-col>Evento</ion-col></td>
                 <td class="encabezado"><ion-col>Usuario</ion-col></td>
-                <td class="encabezado"><ion-col>Detalles</ion-col></td>
+                <td class="encabezado"><ion-col>Acción</ion-col></td>
+                <td class="encabezado"><ion-col>Estado</ion-col></td>
               </ion-row>
             </tr>
             <ion-row *ngFor="let d of array; let i = index">
