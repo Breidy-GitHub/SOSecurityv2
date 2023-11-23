@@ -26,7 +26,7 @@
     <ion-list class="lateral">
       <ion-item class="lista" (click)="navigateToHome()">
         <ion-icon name="home" slot="start"></ion-icon>
-        Home
+        Inicio
       </ion-item>
       <ion-item class="lista">
         <ion-icon name="stats-chart" slot="start"></ion-icon>
@@ -34,7 +34,7 @@
       </ion-item>
       <ion-item class="lista" (click)="navigateToAdmin()">
         <ion-icon name="person" slot="start" class="lista"></ion-icon>
-        Customers
+        Administrador
       </ion-item>
       <ion-item class="lista"  (click)="navigateToDatosSaludPage()">
         <ion-icon name="heart" slot="start"></ion-icon>
@@ -48,7 +48,7 @@
   </ion-content>
 </ion-menu>
 
-<ion-content class="body">
+<ion-content class="body fondo-container">
   <ng-container *ngFor="let contacto of getContactos(); let i = index">
     <ion-card class="custom-card">
       <ion-card-header class="titulo">

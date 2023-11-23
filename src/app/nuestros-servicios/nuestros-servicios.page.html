@@ -15,12 +15,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-header [translucent]="true" class="header-style">
-  <ion-toolbar class="ion-text-center">
-    <ion-title class="title-style">Nuestros Servicios</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-menu side="start" contentId="main-content">
   <ion-content class="lateral">
     <div>
@@ -31,23 +25,23 @@
     </div>
     <ion-list class="lateral">
       <ion-item class="lista" (click)="navigateToHome()">
-        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-icon class="Blater" name="home" slot="start"></ion-icon>
         Home
       </ion-item>
       <ion-item class="lista">
-        <ion-icon name="stats-chart" slot="start"></ion-icon>
+        <ion-icon class="Blater" name="stats-chart" slot="start"></ion-icon>
         Alertas Activas
       </ion-item>
       <ion-item class="lista">
-        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-icon class="Blater" name="person" slot="start"></ion-icon>
         Usuarios
       </ion-item>
       <ion-item class="lista">
-        <ion-icon name="heart" slot="start"></ion-icon>
+        <ion-icon class="Blater" name="heart" slot="start"></ion-icon>
         Historiales
       </ion-item>
       <ion-item class="lista">
-        <ion-icon name="settings" slot="start"></ion-icon>
+        <ion-icon class="Blater" name="settings" slot="start"></ion-icon>
         Configuraciones
       </ion-item>
     </ion-list>
@@ -161,17 +155,6 @@
         <ion-icon name="person-add-outline"class="icon-grande"></ion-icon>
         <ion-card-header>
           <ion-card-title>Red de Apoyo</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          Ofrecemos la posibilidad de configurar una red de apoyo personalizada al agregar contactos de confianza. Esto te permite designar a personas de tu
-          elección que puedan ser contactadas en situaciones de riesgo, brindándote el apoyo de alguien de confianza.
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card class="horizontal-card">
-        <ion-icon name="desktop-outline" class="icon-grande"></ion-icon>
-        <ion-card-header>
-          <ion-card-title>Respaldo de información</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           Ofrecemos la posibilidad de configurar una red de apoyo personalizada al agregar contactos de confianza. Esto te permite designar a personas de tu

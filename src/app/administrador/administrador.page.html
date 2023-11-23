@@ -37,10 +37,6 @@
         Usuarios
       </ion-item>
       <ion-item class="lista">
-        <ion-icon name="heart" slot="start"></ion-icon>
-        Historiales
-      </ion-item>
-      <ion-item class="lista">
         <ion-icon name="settings" slot="start"></ion-icon>
         Configuraciones
       </ion-item>
@@ -53,7 +49,7 @@
     <ion-row>
       <ion-col size="8"></ion-col>
       <ion-col size="4">
-        <ion-title class="historial">Historial SOSecurity</ion-title>
+        <ion-title class="historial">Panel Administrativo</ion-title>
         <ion-searchbar [(ngModel)]="searchText" (ionChange)="onSearch($event)" class="buscar"></ion-searchbar>
       </ion-col>
     </ion-row>
@@ -100,7 +96,7 @@
             <ion-row *ngFor="let d of array; let i = index">
               <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
               <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.usuario}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.nombre}}{{d.apellido}}</ion-col></td>
               <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
             </ion-row>
             </ion-grid>
@@ -144,7 +140,7 @@
             <ion-row *ngFor="let d of array; let i = index">
               <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
               <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.usuario}}</ion-col></td>
+              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col></ion-col></td>
               <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
             </ion-row>
             </ion-grid>

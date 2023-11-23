@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     const btsignIn = document.querySelector("#sign-in") as HTMLElement; //Añadimos el botón de iniciar sesion
@@ -17,6 +18,7 @@ export class LoginPage implements OnInit {
     const formRegister = document.querySelector(".register") as HTMLElement;
     const formLogin = document.querySelector(".login") as HTMLElement;
     const formRecu = document.querySelector(".recu") as HTMLElement;
+
 
     btsignIn.addEventListener("click", () => {
       formRegister.classList.add("hide");
@@ -43,4 +45,11 @@ export class LoginPage implements OnInit {
       formRecu.classList.add("hide");
     })
 }
+navigateToHome() {
+  this.router.navigate(['/home']);
+}
+navigateToLogin() {
+  this.router.navigate(['/login']);
+}
+
 }
