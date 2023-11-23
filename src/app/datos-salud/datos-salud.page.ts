@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 interface Campo {
@@ -53,7 +54,7 @@ export class DatosSaludPage {
     // Agrega los demás campos según sea necesario
   ];
 
-  constructor(private alertCtrl: AlertController) {}
+  constructor(private alertCtrl: AlertController, private router: Router, private ngZone: NgZone) {}
 
   handleCardClick(cardType: string) {
     this.mostrarLista = !this.mostrarLista;
@@ -89,10 +90,10 @@ export class DatosSaludPage {
         break;
     }
   }
-  
+
   guardarLista() {
     let camposSeccionActual: Campo[] = [];
-  
+
     // Selecciona los campos correspondientes a la sección actual
     switch (this.cardClicked) {
       case 'enfermedades':
@@ -104,17 +105,17 @@ export class DatosSaludPage {
       default:
         break;
     }
-  
+
     // Verifica si la sección actual tiene el campo "Otros"
     const tieneCampoOtros = camposSeccionActual.some(campo => campo.nombre === 'Otros');
-  
+
     // Verifica si hay información ingresada en "Otros"
     const otrosCampo = camposSeccionActual.find(campo => campo.nombre === 'Otros');
     const hayInformacionOtros = otrosCampo && otrosCampo.seleccionado;
-  
+
     // Verifica si hay al menos un campo seleccionado en la sección actual
     const haySeleccionado = this.hayAlMenosUnCampoSeleccionado(camposSeccionActual);
-  
+
     if (tieneCampoOtros && (hayInformacionOtros || haySeleccionado)) {
       this.mostrarAlertaExito();
     } else if (!tieneCampoOtros && haySeleccionado) {
@@ -123,10 +124,10 @@ export class DatosSaludPage {
       this.mostrarAlertaError();
     }
   }
-  
+
   guardarFormulario() {
     let camposSeccionActual: Campo[] = [];
-  
+
     // Selecciona los campos correspondientes a la sección actual
     switch (this.cardClicked) {
       case 'medicamentos':
@@ -138,45 +139,65 @@ export class DatosSaludPage {
       default:
         break;
     }
-  
+
     // Verifica si hay información ingresada en "Otros"
     const otrosCampo = camposSeccionActual.find(campo => campo.nombre === 'Otros');
     const hayInformacionOtros = otrosCampo && otrosCampo.seleccionado;
-  
+
     // Verifica si todos los campos en la sección actual están llenos
     const camposLlenados = this.camposLlenadosEnSeccion(camposSeccionActual);
-  
+
     // Verifica si hay información ingresada en los formularios (excepto "Otros")
     const formulariosLlenos = camposSeccionActual.filter(campo => campo.nombre !== 'Otros').some(campo => campo.seleccionado);
-  
+
     if (camposLlenados || hayInformacionOtros || formulariosLlenos) {
       this.mostrarAlertaExito();
     } else {
       this.mostrarAlertaError();
     }
   }
-  
+
   async mostrarAlertaExito() {
     console.log('Guardando datos...');
-  
+
     const alert = await this.alertCtrl.create({
       header: 'Éxito',
       message: 'Datos guardados',
       buttons: ['OK']
     });
-  
+
     await alert.present();
   }
-  
+
   async mostrarAlertaError() {
     const alert = await this.alertCtrl.create({
       header: 'Error',
       message: 'Selecciona al menos un campo o ingresa información en "Otros"',
       buttons: ['OK']
     });
-  
+
     await alert.present();
+  }
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+  navigateToNosotros() {
+    this.router.navigate(['/acerca-de-nosotros']);
+  }
+  navigateToContac() {
+    this.router.navigate(['/contactanos']);
+  }
+  navigateToNuestros() {
+    this.router.navigate(['/nuestros-servicios']);
+  }
+
+  abrirBarraLateral() {
+    this.ngZone.run(() => {
+      const menu = document.querySelector('ion-menu');
+      if (menu) {
+        menu.open();
+      }
+    });
   }
 
 }
-}  

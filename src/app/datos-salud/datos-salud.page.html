@@ -1,8 +1,53 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>datos-salud</ion-title>
+<ion-header>
+  <ion-toolbar class="barra">
+    <div class="header-container">
+      <img src="../../assets/logo.png" alt="Logo" class="logo" />
+      <ion-segment>
+        <ion-segment-button class="usuario" value="cuenta" (click)="abrirBarraLateral()">
+          <ion-icon class="icono" name="person"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button class="texto" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
+        <ion-segment-button class="texto" value="servicios" (click)="navigateToNuestros()">Nuestros Servicios</ion-segment-button>
+        <ion-segment-button class="texto" value="acerca" (click)="navigateToNosotros()">Acerca de Nosotros</ion-segment-button>
+        <ion-segment-button class="texto" value="contacto" (click)="navigateToContac()">Contáctenos</ion-segment-button>
+      </ion-segment>
+    </div>
   </ion-toolbar>
+  <p class="Dtos">Datos Salud</p>
 </ion-header>
+
+<ion-menu side="start" contentId="main-content">
+  <ion-content class="lateral">
+    <div>
+      <ion-avatar class="imagen">
+        <img src="../../assets/icon/favicon.png" alt="Imagen de perfil" />
+      </ion-avatar>
+      <ion-title class="name">Andres Ricardo Parra Salas</ion-title>
+    </div>
+    <ion-list class="lateral">
+      <ion-item class="lista" (click)="navigateToHome()">
+        <ion-icon name="home" slot="start"></ion-icon>
+        Home
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="stats-chart" slot="start"></ion-icon>
+        Alertas Activas
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="person" slot="start"></ion-icon>
+        Usuarios
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="heart" slot="start"></ion-icon>
+        Historiales
+      </ion-item>
+      <ion-item class="lista">
+        <ion-icon name="settings" slot="start"></ion-icon>
+        Configuraciones
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
 <ion-content class="bg-content">
 
@@ -157,5 +202,5 @@
       </ion-col>
     </ion-row>
   </div>
-  
+
 </ion-content>

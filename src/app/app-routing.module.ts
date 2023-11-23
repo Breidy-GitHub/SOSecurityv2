@@ -41,7 +41,11 @@ const routes: Routes = [
   {
     path: 'datos-salud',
     loadChildren: () => import('./datos-salud/datos-salud.module').then( m => m.DatosSaludPageModule)
+  },  {
+    path: 'mis-alertas',
+    loadChildren: () => import('./mis-alertas/mis-alertas.module').then( m => m.MisAlertasPageModule)
   },
+
 ];
 @NgModule({
   imports: [

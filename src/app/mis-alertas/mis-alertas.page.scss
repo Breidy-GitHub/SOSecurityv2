@@ -3,14 +3,11 @@
   align-items: center;
   justify-content: space-between;
 }
-.fondo-container {
-  background-image: url('../../assets/fondo.png');
+.body {
+  --background: white;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-.body {
-  --background: none;
 }
 
 .logo {
@@ -58,43 +55,51 @@ ion-icon{
   color:rgb(0, 187, 255);
   font-size: 40px;
 }
-.borrar{
-  position: absolute;
-  top: 95px;
-  right: 10px;
-  cursor: pointer;
-}
-.iconB{
-  color: red;
-  font-size: 30px;
-  filter: drop-shadow(2px 2px 1px white);
-}
-.custom-card{
-  background: rgba(77, 73, 73, 0.703);
-  height: auto;
-  width: 500px;
-  margin-left: 500px;
-  border-radius: 20px;
-  box-shadow: 2px 2px 2px rgb(255, 255, 255);
-}
-.titulo{
-  font-size: 25px;
+.Ttabla {
   text-align: center;
-  color: white;
-  filter:drop-shadow(2px 2px 2px black);
+  background: rgb(1, 124, 201);
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 10px 0;
+  border: 2px solid black;
+  padding: 10px;
+  font-size: 27px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
-.datos-container {
-  display: flex;
-  color: white;
+
+table {
+  width: 93.7%;
+  border-collapse: collapse;
+  margin-left: 50px;
 }
-.datos{
-  filter: drop-shadow(2px 2px 2px black);
+
+td {
+  padding: 15px;
+  border: 1.5px solid #ddd;
+  width: 240px;
+  border-radius: 5px;
+}
+
+.encabezado {
+  text-align: center;
+  font-weight: bold;
   font-size: 20px;
-  margin-top: -10px;
+  background: black;
+  color: white;
 }
-.datos2 {
-  margin-left: 30px;
-  color: rgb(0, 187, 255);
-  font-size: 18px;
-  margin-top: -7px;
+
+.fila-gris {
+  background-color: gray;
+  padding: 8px;
+  color: black;
+  text-align: center;
+}
+
+.fila-azul {
+  background-color: #3498db9d;
+  padding: 8px;
+  color: white;
+  text-align: center;
 }

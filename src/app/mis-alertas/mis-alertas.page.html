@@ -1,18 +1,15 @@
 <ion-header>
   <ion-toolbar class="barra">
     <div class="header-container">
-      <img src="../../assets/logo.png" alt="Logo" class="logo" />
+      <img src="../../assets/logo.png" alt="Logo" class="logo"/>
       <ion-segment>
         <ion-segment-button class="usuario" value="cuenta" (click)="abrirBarraLateral()">
-          <ion-icon  class="icono" name="person"></ion-icon>
+          <ion-icon class="icono" name="person"></ion-icon>
         </ion-segment-button>
         <ion-segment-button class="texto" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
         <ion-segment-button class="texto" value="servicios" (click)="navigateToNuestros()">Nuestros Servicios</ion-segment-button>
         <ion-segment-button class="texto" value="acerca" (click)="navigateToNosotros()">Acerca de Nosotros</ion-segment-button>
         <ion-segment-button class="texto" value="contacto" (click)="navigateToContac()">Contáctenos</ion-segment-button>
-        <ion-segment-button (click)="navigateTocontact()">
-          <ion-icon  class="icono" name="settings-outline"></ion-icon>
-        </ion-segment-button>
       </ion-segment>
     </div>
   </ion-toolbar>
@@ -22,26 +19,22 @@
   <ion-content class="lateral">
     <div>
       <ion-avatar class="imagen">
-        <img src="../../assets/icon/favicon.png" alt="Imagen de perfil" />
+        <img src="../../assets/icon/favicon.png" alt="Imagen de perfil"/>
       </ion-avatar>
       <ion-title class="name">Andres Ricardo Parra Salas</ion-title>
     </div>
     <ion-list class="lateral">
       <ion-item class="lista" (click)="navigateToHome()">
         <ion-icon name="home" slot="start"></ion-icon>
-        Inicio
+        Home
       </ion-item>
-      <ion-item class="lista" (click)="navigateToAlert()">
+      <ion-item class="lista">
         <ion-icon name="stats-chart" slot="start"></ion-icon>
-        Mis Alertas
+        Alertas Activas
       </ion-item>
-      <ion-item class="lista" (click)="navigateToAdmin()">
+      <ion-item class="lista">
         <ion-icon name="person" slot="start"></ion-icon>
-        Administrador
-      </ion-item>
-      <ion-item class="lista" (click)="navigateToDatosSaludPage()">
-        <ion-icon name="heart" slot="start"></ion-icon>
-        Datos Salud
+        Usuarios
       </ion-item>
       <ion-item class="lista">
         <ion-icon name="settings" slot="start"></ion-icon>
@@ -51,18 +44,24 @@
   </ion-content>
 </ion-menu>
 
-<ion-content class="body fondo-container">
-  <div class="ubicacion">Tu ubicación actual</div>
-  <div class="addres">{{ userLocation ? userAddress : 'Obteniendo ubicación...' }}</div>
-  <div Class="mapa">
-  <div class="map-container">
-    <div id="map" class="map" style="height: calc(50vh)"></div>
+<ion-content class="body">
+  <div *ngIf="vistaOpt">
+    <ion-title class="Ttabla">Mis Alertas</ion-title>
+    <table>
+      <tr>
+        <td class="encabezado"><ion-col>Fecha/Hora</ion-col></td>
+        <td class="encabezado"><ion-col>Tipo Alerta</ion-col></td>
+        <td class="encabezado"><ion-col>Ubicación</ion-col></td>
+        <td class="encabezado"><ion-col>Dispositivo</ion-col></td>
+      </tr>
+      <ng-container *ngFor="let d of array; let i = index">
+        <tr>
+          <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
+          <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.tAlerta}}</ion-col></td>
+          <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.ubicacion}}</ion-col></td>
+          <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.dispositivo}}</ion-col></td>
+        </tr>
+      </ng-container>
+    </table>
   </div>
-  </div>
-  <ion-button class="custom-button">
-    SOS
-  </ion-button>
 </ion-content>
-<ion-button class="agregar" (click)="mostrarAlerta()">
-  <ion-icon class="mas" name="person-add"></ion-icon>
-</ion-button>

@@ -26,6 +26,9 @@ export class HomePage implements OnInit {
   navigateToDatosSaludPage() {
     this.router.navigate(['datos-salud']);
   }
+  navigateToAlert() {
+    this.router.navigate(['mis-alertas']);
+  }
 
   getUserLocation() {
     if (navigator.geolocation) {
