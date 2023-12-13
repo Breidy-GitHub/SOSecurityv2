@@ -18,6 +18,7 @@ export class AdministradorPage implements OnInit {
   vistaOpt3: Boolean = false;
   vistaOpt4: Boolean = false;
   selectedCard: string | null = null;
+  userAddress: string | undefined;
 
 
   constructor(
@@ -77,7 +78,7 @@ export class AdministradorPage implements OnInit {
 
     switch (valor) {
       case 'Eventos de seguridad':
-        this.getHistory();
+        this.getEventos('eventos');
         this.vistaOpt1 = true;
         this.vistaOpt2 = false;
         this.vistaOpt3 = false;
@@ -113,33 +114,33 @@ export class AdministradorPage implements OnInit {
 
   }
 
-
   // metodo consulta back
-  getHistory() {
-    let rest = this.http.get('http://localhost:3000/historial');
+  getEventos(ruta: string) {
+    this.http.get(`http://localhost:3000/eventos`).subscribe(
+        (data: any) => {
+            if (data.success) {
+                this.array = this.formatEventos(data.data);
+                console.log('Eventos obtenidos:', this.array);
+            } else {
+                console.error('Error al obtener eventos:', data.error);
+            }
+        },
+        (error) => {
+            console.error('Error de conexión:', error);
+        }
+    );
+}
 
-    rest.subscribe(data => {
-
-      let dataDefoult = JSON.stringify(data);
-      let dataFormat = JSON.parse(dataDefoult);
-      this.dataRow = []
-      for (let index = 0; index < dataFormat.data.length; index++) {
-
-        this.dataRow.push(
-          {
-            apellido: dataFormat.data[index].apellidos,
-            detalles: dataFormat.data[index].detalles,
-            evento: dataFormat.data[index].evento,
-            fecha: new Date(dataFormat.data[index].fecha).toLocaleString('es-CO'),
-            nombre: dataFormat.data[index].nombre
-          }
-        )
-
-      }
-      this.array = this.dataRow;
-      console.log(this.array);
-
-    })
-
-  }
+formatEventos(data: any[]): any[] {
+  return data.map((evento: any) => {
+      return {
+          fecha: new Date(evento.fecha).toLocaleString('es-CO'),
+          evento: evento.evento,
+          nombre: evento.nombreUsuario,
+          detalles: evento.detalles,
+          accion: evento.accion,
+          talerta: evento.talerta
+      };
+  });
+}
 }

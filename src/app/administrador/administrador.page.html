@@ -94,10 +94,10 @@
               </ion-row>
             </tr>
             <ion-row *ngFor="let d of array; let i = index">
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.nombre}}{{d.apellido}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.fecha}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.evento}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.nombre}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.detalles}}</ion-col></td>
             </ion-row>
             </ion-grid>
           </table>
@@ -116,10 +116,10 @@
               </ion-row>
             </tr>
             <ion-row *ngFor="let d of array; let i = index">
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.usuario}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.fecha}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.nombre}} {{d.apellido}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.accion}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.detalles}}</ion-col></td>
             </ion-row>
             </ion-grid>
           </table>
@@ -138,10 +138,10 @@
               </ion-row>
             </tr>
             <ion-row *ngFor="let d of array; let i = index">
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col></ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.fecha}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.talerta}}</ion-col></td>
+              <td class="fila"><ion-col></ion-col>{{this.userAddress}}</td>
+              <td class="fila"><ion-col>{{d.detalles}}</ion-col></td>
             </ion-row>
             </ion-grid>
           </table>
@@ -160,10 +160,10 @@
               </ion-row>
             </tr>
             <ion-row *ngFor="let d of array; let i = index">
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.evento}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.usuario}}</ion-col></td>
-              <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.detalles}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.fecha}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.evento}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.accion}}</ion-col></td>
+              <td class="fila"><ion-col>{{d.detalles}}</ion-col></td>
             </ion-row>
             </ion-grid>
           </table>

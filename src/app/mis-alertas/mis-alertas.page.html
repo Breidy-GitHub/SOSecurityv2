@@ -54,12 +54,12 @@
         <td class="encabezado"><ion-col>Ubicación</ion-col></td>
         <td class="encabezado"><ion-col>Dispositivo</ion-col></td>
       </tr>
-      <ng-container *ngFor="let d of array; let i = index">
+      <ng-container *ngFor="let evento of eventos; let i = index">
         <tr>
-          <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.fecha}}</ion-col></td>
-          <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.tAlerta}}</ion-col></td>
-          <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.ubicacion}}</ion-col></td>
-          <td class="fila-{{i % 2 === 0 ? 'gris' : 'azul'}}"><ion-col>{{d.dispositivo}}</ion-col></td>
+          <td class="fila"><ion-col>{{ displayLocalTime(evento.fecha) }}</ion-col></td>
+          <td class="fila"><ion-col>{{ evento.talerta }}</ion-col></td>
+          <td class="fila"><ion-col>{{ evento.ubicacion }}</ion-col></td>
+          <td class="fila"><ion-col>{{ evento.dispositivo }}</ion-col></td>
         </tr>
       </ng-container>
     </table>

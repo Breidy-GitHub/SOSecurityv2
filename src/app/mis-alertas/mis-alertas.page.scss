@@ -77,9 +77,8 @@ table {
 
 td {
   padding: 15px;
-  border: 1.5px solid #ddd;
+  border: 1.5px solid black;
   width: 240px;
-  border-radius: 5px;
 }
 
 .encabezado {
@@ -90,16 +89,9 @@ td {
   color: white;
 }
 
-.fila-gris {
-  background-color: gray;
+.fila {
   padding: 8px;
   color: black;
   text-align: center;
-}
-
-.fila-azul {
-  background-color: #3498db9d;
-  padding: 8px;
-  color: white;
-  text-align: center;
+  border-radius: 50px;
 }

@@ -4,14 +4,14 @@
       <img src="../../assets/logo.png" alt="Logo" class="logo" />
       <ion-segment>
         <ion-segment-button class="usuario" value="cuenta" (click)="abrirBarraLateral()">
-          <ion-icon  class="icono" name="person"></ion-icon>
+          <ion-icon  class="icono" name="menu"></ion-icon>
         </ion-segment-button>
         <ion-segment-button class="texto" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
         <ion-segment-button class="texto" value="servicios" (click)="navigateToNuestros()">Nuestros Servicios</ion-segment-button>
         <ion-segment-button class="texto" value="acerca" (click)="navigateToNosotros()">Acerca de Nosotros</ion-segment-button>
         <ion-segment-button class="texto" value="contacto" (click)="navigateToContac()">Contáctenos</ion-segment-button>
         <ion-segment-button (click)="navigateTocontact()">
-          <ion-icon  class="icono" name="settings-outline"></ion-icon>
+          <ion-icon  class="icono" name="people"></ion-icon>
         </ion-segment-button>
       </ion-segment>
     </div>
@@ -31,38 +31,38 @@
         <ion-icon name="home" slot="start"></ion-icon>
         Inicio
       </ion-item>
+      <ion-item class="lista"(click)="solicitarCedula()">
+        <ion-icon name="list" slot="start"></ion-icon>
+        Mis datos
+      </ion-item>
       <ion-item class="lista" (click)="navigateToAlert()">
         <ion-icon name="stats-chart" slot="start"></ion-icon>
         Mis Alertas
-      </ion-item>
-      <ion-item class="lista" (click)="navigateToAdmin()">
-        <ion-icon name="person" slot="start"></ion-icon>
-        Administrador
       </ion-item>
       <ion-item class="lista" (click)="navigateToDatosSaludPage()">
         <ion-icon name="heart" slot="start"></ion-icon>
         Datos Salud
       </ion-item>
-      <ion-item class="lista">
-        <ion-icon name="settings" slot="start"></ion-icon>
-        Configuraciones
+      <ion-item class="lista" (click)="navigateToAdmin()">
+        <ion-icon name="person" slot="start"></ion-icon>
+        Administrador
       </ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
 
-<ion-content class="body fondo-container">
-  <div class="ubicacion">Tu ubicación actual</div>
-  <div class="addres">{{ userLocation ? userAddress : 'Obteniendo ubicación...' }}</div>
-  <div Class="mapa">
-  <div class="map-container">
-    <div id="map" class="map" style="height: calc(50vh)"></div>
-  </div>
-  </div>
-  <ion-button class="custom-button">
-    SOS
+  <ion-content class="body fondo-container">
+    <div class="ubicacion">Tu ubicación actual</div>
+    <div class="addres">{{ userLocation ? userAddress : 'Obteniendo ubicación...' }}</div>
+    <div Class="mapa">
+    <div class="map-container">
+      <div id="map" class="map" style="height: calc(50vh)"></div>
+    </div>
+    </div>
+    <ion-button class="custom-button"(click)="sendSOSMessage()">
+      SOS
+    </ion-button>
+  </ion-content>
+  <ion-button class="agregar" (click)="agregarContacto()">
+    <ion-icon class="mas" name="person-add"></ion-icon>
   </ion-button>
-</ion-content>
-<ion-button class="agregar" (click)="mostrarAlerta()">
-  <ion-icon class="mas" name="person-add"></ion-icon>
-</ion-button>

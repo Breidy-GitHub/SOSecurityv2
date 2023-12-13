@@ -61,6 +61,12 @@ export class ContactanosPage  {
   navigateToNuestros() {
     this.router.navigate(['/nuestros-servicios']);
   }
+  navigateToDatosSaludPage() {
+    this.router.navigate(['datos-salud']);
+  }
+  navigateToAlert() {
+    this.router.navigate(['mis-alertas']);
+  }
 
   abrirBarraLateral() {
     this.ngZone.run(() => {

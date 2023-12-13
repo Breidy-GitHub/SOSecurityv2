@@ -8,6 +8,7 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </ion-header>
 
+
 <ion-content class="custom-content center-content">
   <div class="container-wrapper">
     <div class="container-form login hide">
@@ -24,16 +25,16 @@
           <P></P>
           <p>O usa tu email para registrarte  <a href="#" class="btn-recu" id="sign-recu">Recuperar Contraseña</a>
           </p>
-          <form class="form">
+          <form class="form" (ngSubmit)="loginUser()">
             <label>
               <i class='bx bx-envelope'></i>
-              <input type="email" placeholder="Correo Electrónico">
+              <input type="email" placeholder="Correo Electrónico" [(ngModel)]="userData2.email" name="email">
             </label>
             <label>
               <i class='bx bx-lock-alt'></i>
-              <input type="password" placeholder="Contraseña">
+              <input type="password" placeholder="Contraseña"[(ngModel)]="userData2.password" name="password">
             </label>
-            <input type="submit" value="Iniciar Sesión" (click)="navigateToHome()">
+            <input id="loginButton" type="submit" value="Iniciar Sesión">
           </form>
         </div>
       </div>
@@ -50,20 +51,20 @@
       <div class="form-information">
         <div class="form-information-childs">
           <h2>Crear Cuenta</h2>
-          <form class="form">
+          <form class="form" (ngSubmit)="registerUser()">
             <label>
               <i class='bx bx-user'></i>
-              <input type="text" placeholder="Nombres Completos">
+              <input type="text" placeholder="Nombres Completos" name="nombre" [(ngModel)]="userData.nombre">
             </label>
             <label>
               <i class='bx bx-envelope'></i>
-              <input type="email" placeholder="Correo Electrónico">
+              <input type="email" placeholder="Correo Electrónico" name="email" [(ngModel)]="userData.email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
             </label>
             <label>
               <i class='bx bx-lock-alt'></i>
-              <input type="password" placeholder="Contraseña">
+              <input type="password" placeholder="Contraseña" name="password" [(ngModel)]="userData.password">
             </label>
-            <input type="submit" value="Registrarse" (click)="navigateToLogin()">
+            <input id="registerButton" type="submit" value="Registrarse">
           </form>
         </div>
       </div>
@@ -87,9 +88,9 @@
           <form class="form">
             <label>
               <i class='bx bx-envelope'></i>
-              <input type="email" placeholder="Correo Electrónico">
+              <input [(ngModel)]="userData3.email" name="email" type="email" placeholder="Correo Electrónico">
             </label>
-            <input type="submit" value="Recuperar contraseña">
+            <input id="recuperarButton" type="submit" value="Recuperar contraseña" (click)="recuperarContrasena()">
           </form>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-mis-alertas',
@@ -11,10 +12,13 @@ export class MisAlertasPage implements OnInit {
   searchText: string = '';
   mostrarLista = false;
   array: any[] = [];
+  eventos: any[] = [];
   vistaOpt: Boolean = false;
 
 
-  constructor(private router: Router, private ngZone: NgZone) { }
+  constructor(private router: Router,
+    private ngZone: NgZone,
+    private http: HttpClient) { }
 
 
   ngOnInit() {
@@ -42,50 +46,32 @@ export class MisAlertasPage implements OnInit {
       }
     });
   }
-
   mostrarEventos(valor: string) {
     switch (valor) {
       case 'Mis Alertas':
-        this.vistaOpt = true;
-        this.array = [
-          {
-            fecha: '2023-11-16',
-            tAlerta: 'Daño en propiedad ajena',
-            ubicacion: 'Diagonal 69 G Bis Sur # 40 A 21',
-            dispositivo: 'Xiaomi Redmi Note 11'
+        this.http.get<any>('http://localhost:3000/eventos').subscribe(
+          (data) => {
+            this.eventos = this.adjustTimeZone (data.data) || [];
+            this.vistaOpt = true;
           },
-          {
-            fecha: '2023-11-09',
-            tAlerta: 'Fuego',
-            ubicacion: 'Av calle 24 # 37 - 15',
-            dispositivo: 'Samsung Galaxy A22'
-          },
-          {
-            fecha: '2023-11-16',
-            tAlerta: 'Daño en propiedad ajena',
-            ubicacion: 'Diagonal 69 G Bis Sur # 40 A 21',
-            dispositivo: 'Xiaomi Redmi Note 11'
-          },
-          {
-            fecha: '2023-11-09',
-            tAlerta: 'Fuego',
-            ubicacion: 'Av calle 24 # 37 - 15',
-            dispositivo: 'Samsung Galaxy A22'
-          },
-          {
-            fecha: '2023-11-16',
-            tAlerta: 'Daño en propiedad ajena',
-            ubicacion: 'Diagonal 69 G Bis Sur # 40 A 21',
-            dispositivo: 'Xiaomi Redmi Note 11'
-          },
-          {
-            fecha: '2023-11-09',
-            tAlerta: 'Fuego',
-            ubicacion: 'Av calle 24 # 37 - 15',
-            dispositivo: 'Samsung Galaxy A22'
+          (error) => {
+            console.error('Error al obtener eventos', error);
           }
-        ];
+        );
         break;
-      }
     }
   }
+  adjustTimeZone(eventos: any[]) {
+    return eventos.map((evento) => {
+      // Ajustar la zona horaria a UTC-5 (Colombia)
+      const fechaLocal = new Date(evento.fecha);
+      fechaLocal.setHours(fechaLocal.getHours() - 5);
+      evento.fecha = fechaLocal.toISOString(); // Convertir de nuevo a cadena
+      return evento;
+    });
+  }
+  displayLocalTime(fecha: string) {
+    const fechaLocal = new Date(fecha);
+    return fechaLocal.toLocaleString('es-CO', { timeZone: 'America/Bogota' });
+  }
+}

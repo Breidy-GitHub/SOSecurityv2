@@ -4,7 +4,7 @@
       <img src="../../assets/logo.png" alt="Logo" class="logo" />
       <ion-segment>
         <ion-segment-button class="usuario" value="cuenta" (click)="abrirBarraLateral()">
-          <ion-icon  class="icono" name="person"></ion-icon>
+          <ion-icon  class="icono" name="menu"></ion-icon>
         </ion-segment-button>
         <ion-segment-button class="texto" value="inicio" (click)="navigateToHome()">Inicio</ion-segment-button>
         <ion-segment-button class="texto" value="servicios" (click)="navigateToNuestros()">Nuestros Servicios</ion-segment-button>
@@ -28,28 +28,24 @@
         <ion-icon name="home" slot="start"></ion-icon>
         Inicio
       </ion-item>
-      <ion-item class="lista">
+      <ion-item class="lista" (click)="navigateToAlert()">
         <ion-icon name="stats-chart" slot="start"></ion-icon>
         Mis Alertas
       </ion-item>
-      <ion-item class="lista" (click)="navigateToAdmin()">
-        <ion-icon name="person" slot="start" class="lista"></ion-icon>
-        Administrador
-      </ion-item>
-      <ion-item class="lista"  (click)="navigateToDatosSaludPage()">
+      <ion-item class="lista" (click)="navigateToDatosSaludPage()">
         <ion-icon name="heart" slot="start"></ion-icon>
         Datos Salud
       </ion-item>
       <ion-item class="lista">
-        <ion-icon name="settings" slot="start"></ion-icon>
-        Configuraciones
+        <ion-icon name="person" slot="start"></ion-icon>
+        Administrador
       </ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
 
 <ion-content class="body fondo-container">
-  <ng-container *ngFor="let contacto of getContactos(); let i = index">
+  <ng-container *ngFor="let contacto of contactos; let i = index">
     <ion-card class="custom-card">
       <ion-card-header class="titulo">
         Datos del Contacto
@@ -70,6 +66,9 @@
         <div class="datos">Número de Celular:</div>
         <div class="datos2">{{ contacto.numeroCelular }}</div>
       </ion-card-content>
+      <ion-button fill="clear" class="modificar" (click)="modificarContacto(contacto)">
+        <ion-icon class="iconM" name="create"></ion-icon>
+      </ion-button>
       <ion-button fill="clear" class="borrar" (click)="eliminarContacto(i)">
         <ion-icon class="iconB" name="trash"></ion-icon>
       </ion-button>
