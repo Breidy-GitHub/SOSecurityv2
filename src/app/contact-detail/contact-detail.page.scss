@@ -69,6 +69,18 @@ ion-icon{
   font-size: 30px;
   filter: drop-shadow(2px 2px 1px white);
 }
+.modificar {
+  position: absolute;
+  top: 95px;
+  right: 60px;
+  cursor: pointer;
+}
+
+.iconM {
+  color: rgb(0, 187, 255);
+  font-size: 30px;
+  filter: drop-shadow(2px 2px 1px white);
+}
 .custom-card{
   background: rgba(77, 73, 73, 0.703);
   height: auto;

@@ -1,5 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-nuestros-servicios',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nuestros-servicios.page.scss'],
 })
 export class NuestrosServiciosPage {
-  constructor(private router: Router, private ngZone: NgZone) {}
+  constructor(private router: Router, private ngZone: NgZone, private alertController: AlertController) {}
 
 
   navigateToHome() {
@@ -22,6 +23,12 @@ export class NuestrosServiciosPage {
   navigateToNuestros() {
     this.router.navigate(['/nuestros-servicios']);
   }
+  navigateToDatosSaludPage() {
+    this.router.navigate(['datos-salud']);
+  }
+  navigateToAlert() {
+    this.router.navigate(['mis-alertas']);
+  }
 
   abrirBarraLateral() {
     this.ngZone.run(() => {
@@ -31,8 +38,6 @@ export class NuestrosServiciosPage {
       }
     });
   }
-
-
   mostrarParrafoAdicional = false;
 
   toggleParrafoAdicional() {
